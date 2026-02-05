@@ -1,0 +1,22 @@
+---
+import NavLink from "./NavLink.astro";
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/before-your-visit", label: "Before your visit" },
+  { href: "/book", label: "Book now" },
+  { href: "/contact", label: "Contact" },
+  { href: "/staff", label: "Staff" },
+];
+---
+
+<div>
+  <div class="flex flex-row items-center justify-between px-4 py-2 md:px-6">
+    <div class="text-lg font-semibold tracking-tight">Lucy Russell Hair</div>
+    <nav class="flex flex-wrap gap-4 text-base" aria-label="Main navigation">
+      {links.map((link) => <NavLink href={link.href} label={link.label} />)}
+    </nav>
+  </div>
+  <hr class="border-base-300" />
+</div>

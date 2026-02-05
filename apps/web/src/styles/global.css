@@ -1,0 +1,69 @@
+/*
+ * hairdresser-dark – dark high-contrast palette (oklch)
+ * Base:    base-100 14% 0.02 260, base-200 18%, base-300 24%, base-content 98% 0.01 260
+ * Primary: 70% 0.18 260 (+ content 98%)
+ * Secondary: 55% 0.08 260 (+ content 98%)
+ * Accent:  75% 0.15 180 (+ content 18%)
+ * Neutral: 35% 0.02 260 (+ content 95%)
+ * Info:    65% 0.18 250, Success: 65% 0.18 145, Warning: 75% 0.15 85, Error: 60% 0.22 25
+ */
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: false;
+}
+@plugin "daisyui/theme" {
+  name: "hairdresser-dark";
+  default: true;
+  prefersdark: true;
+  color-scheme: dark;
+
+  /* Base – page background and text */
+  --color-base-100: oklch(14% 0.02 260);
+  --color-base-200: oklch(18% 0.02 260);
+  --color-base-300: oklch(24% 0.02 260);
+  --color-base-content: oklch(98% 0.01 260);
+
+  /* Primary – main brand / CTAs */
+  --color-primary: oklch(70% 0.18 260);
+  --color-primary-content: oklch(98% 0.01 260);
+
+  /* Secondary – supporting UI */
+  --color-secondary: oklch(55% 0.08 260);
+  --color-secondary-content: oklch(98% 0.01 260);
+
+  /* Accent – highlights / focus */
+  --color-accent: oklch(75% 0.15 180);
+  --color-accent-content: oklch(18% 0.03 180);
+
+  /* Neutral – cards, borders, subtle UI */
+  --color-neutral: oklch(35% 0.02 260);
+  --color-neutral-content: oklch(95% 0.01 260);
+
+  /* Info – informational */
+  --color-info: oklch(65% 0.18 250);
+  --color-info-content: oklch(98% 0.01 250);
+
+  /* Success – success states */
+  --color-success: oklch(65% 0.18 145);
+  --color-success-content: oklch(98% 0.01 145);
+
+  /* Warning – warnings */
+  --color-warning: oklch(75% 0.15 85);
+  --color-warning-content: oklch(20% 0.05 85);
+
+  /* Error – errors / destructive */
+  --color-error: oklch(60% 0.22 25);
+  --color-error-content: oklch(98% 0.01 25);
+
+  /* Optional – border radius and border */
+  --radius-box: 0.5rem;
+  --radius-field: 0.25rem;
+  --border: 1px;
+}
+
+/* Add your theme customizations here. */
+/* See the TailwindCSS v4 docs for more info: https://tailwindcss.com/docs/v4-beta */
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+}

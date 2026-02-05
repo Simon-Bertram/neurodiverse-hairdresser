@@ -1,0 +1,272 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Book an Appointment | Lucy Russell Hair">
+  <div class="container mx-auto max-w-3xl px-4 py-10 m-4">
+    <div class="grid gap-8">
+      <h1 class="text-2xl font-bold">Book an appointment</h1>
+
+      <p class="text-base leading-relaxed">
+        When you send this form, Lucy will reply within 1–2 working days by
+        your preferred method (email, text or phone). She will confirm your
+        details, the service, date and time, and the price. You can ask
+        questions or change anything before the appointment is final.
+      </p>
+
+      <form
+        class="space-y-8"
+        method="get"
+        action="/book/thank-you"
+        id="booking-form"
+      >
+        <fieldset class="space-y-4">
+          <legend class="text-lg font-semibold mb-2">Your details</legend>
+          <div>
+            <label for="name" class="block text-sm font-medium mb-1">
+              Your name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="input input-bordered w-full max-w-md"
+              autocomplete="name"
+            />
+          </div>
+          <div>
+            <span class="block text-sm font-medium mb-2">
+              Preferred contact method
+            </span>
+            <div class="flex flex-wrap gap-4">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="contact_method" value="email" />
+                Email
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="contact_method" value="text" />
+                Text
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="contact_method" value="phone" />
+                Phone
+              </label>
+            </div>
+          </div>
+          <div>
+            <label for="contact_detail" class="block text-sm font-medium mb-1">
+              Email address or phone number
+            </label>
+            <input
+              type="text"
+              id="contact_detail"
+              name="contact_detail"
+              required
+              class="input input-bordered w-full max-w-md"
+              autocomplete="email"
+            />
+            <p class="text-sm text-base-content/70 mt-1">
+              Please add your email or phone number so we can reply.
+            </p>
+          </div>
+        </fieldset>
+
+        <fieldset class="space-y-4">
+          <legend class="text-lg font-semibold mb-2">Address</legend>
+          <div>
+            <label for="address" class="block text-sm font-medium mb-1">
+              Full address or postcode
+            </label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              required
+              class="input input-bordered w-full max-w-md"
+              autocomplete="street-address"
+            />
+            <p class="text-sm text-base-content/70 mt-1">
+              We visit Bournemouth, Poole and within 25 miles.
+            </p>
+          </div>
+        </fieldset>
+
+        <fieldset class="space-y-4">
+          <legend class="text-lg font-semibold mb-2">Appointment</legend>
+          <div>
+            <label for="service" class="block text-sm font-medium mb-1">
+              Service you want
+            </label>
+            <select
+              id="service"
+              name="service"
+              class="select select-bordered w-full max-w-md"
+            >
+              <option value="cut">Cut</option>
+              <option value="colour">Colour</option>
+              <option value="styling">Styling</option>
+              <option value="cut-and-colour">Cut and colour</option>
+              <option value="other">Other (describe in message)</option>
+            </select>
+          </div>
+          <div>
+            <label for="preferred_days" class="block text-sm font-medium mb-1">
+              Preferred days or times
+            </label>
+            <input
+              type="text"
+              id="preferred_days"
+              name="preferred_days"
+              class="input input-bordered w-full max-w-md"
+              placeholder="e.g. weekday mornings, Saturday"
+            />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium mb-1">
+              Any questions or notes
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="textarea textarea-bordered w-full max-w-md"
+            />
+          </div>
+        </fieldset>
+
+        <fieldset class="space-y-4 border border-base-300 rounded-lg p-6">
+          <legend class="text-lg font-semibold mb-2">
+            Sensory preferences (optional)
+          </legend>
+          <p class="text-sm text-base-content/80 mb-4">
+            Tick anything that helps you feel comfortable. We will follow your
+            choices.
+          </p>
+
+          <div class="space-y-6">
+            <div>
+              <span class="block font-medium mb-2" id="auditory-legend">
+                Auditory (sound)
+              </span>
+              <div
+                class="space-y-2"
+                role="group"
+                aria-labelledby="auditory-legend"
+              >
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="pref_quiet" value="1" />
+                  Prefer quiet / minimal chat
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="pref_warn_sounds" value="1" />
+                  Tell me before using clippers or loud tools
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="pref_no_music" value="1" />
+                  No music
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <span class="block font-medium mb-2" id="tactile-legend">
+                Tactile (touch)
+              </span>
+              <div
+                class="space-y-2"
+                role="group"
+                aria-labelledby="tactile-legend"
+              >
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="pref_dry_cut" value="1" />
+                  Prefer dry cut (no wash)
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="pref_light_touch" value="1" />
+                  Light touch only
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="pref_breaks" value="1" />
+                  Offer breaks during the appointment
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <span class="block font-medium mb-2" id="visual-legend">
+                Visual
+              </span>
+              <div
+                class="space-y-2"
+                role="group"
+                aria-labelledby="visual-legend"
+              >
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="pref_style_menu" value="1" />
+                  Show me a style menu or pictures
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="pref_mirror_optional" value="1" />
+                  Mirror optional (tell me when to look)
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <span class="block font-medium mb-2" id="olfactory-legend">
+                Olfactory (smell)
+              </span>
+              <div
+                class="space-y-2"
+                role="group"
+                aria-labelledby="olfactory-legend"
+              >
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="pref_low_scent" value="1" />
+                  Low or no scent products
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <span class="block font-medium mb-2" id="social-legend">
+                Social & cognitive
+              </span>
+              <div
+                class="space-y-2"
+                role="group"
+                aria-labelledby="social-legend"
+              >
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="pref_text_only" value="1" />
+                  Prefer to book and communicate by text/email only
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="pref_step_by_step" value="1" />
+                  Tell me each step before you do it
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="pref_carer_present" value="1" />
+                  Carer or companion may be present
+                </label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="flex flex-wrap gap-4">
+          <button type="submit" class="btn btn-primary px-6 py-3">
+            Send booking request
+          </button>
+          <a href="/contact" class="btn btn-ghost">Contact instead</a>
+        </div>
+      </form>
+
+      <p class="text-sm text-base-content/70">
+        Your choices above will be included in your request. Lucy will confirm
+        everything before the appointment so you know what to expect.
+      </p>
+    </div>
+  </div>
+</Layout>
