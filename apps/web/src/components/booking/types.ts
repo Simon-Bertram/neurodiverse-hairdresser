@@ -89,7 +89,6 @@ export interface StepSensoryProps {
 export interface StepReviewProps {
   formData: FormData;
   onEditStep: (stepId: StepId) => void;
-  onSubmit: () => void;
   isSubmitting: boolean;
 }
 

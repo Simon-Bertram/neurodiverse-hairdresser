@@ -20,14 +20,17 @@ const links = [
       <div class="flex-none lg:hidden">
         <label
           for="my-drawer-2"
-          aria-label="open sidebar"
+          id="drawer-open-btn"
           class="btn btn-square btn-ghost"
         >
+          <span class="sr-only">Open menu</span>
+          <span class="text-sm">Menu</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             class="inline-block h-6 w-6 stroke-current"
+            aria-hidden="true"
           >
             <path
               stroke-linecap="round"
@@ -38,7 +41,11 @@ const links = [
         </label>
       </div>
       <div class="mx-2 flex-1 px-2">
-        <a href="/" class="text-primary-content hover:text-primary-content/90">
+        <a
+          href="/"
+          class="text-primary-content hover:text-primary-content/90"
+          aria-label="Lucy Russell Hair – Home"
+        >
           <Logo />
         </a>
       </div>
@@ -55,15 +62,13 @@ const links = [
       </nav>
     </div>
     <hr class="border-base-300" />
-    <!-- Page content -->
-    <main class="flex-1">
-      <slot />
-    </main>
   </div>
-  <div class="drawer-side">
-    <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"
-    ></label>
-    <ul class="menu bg-base-200 min-h-full w-80 p-4 text-base-content">
+  <div class="drawer-side" id="drawer-side" role="navigation" aria-label="Mobile navigation">
+    <label for="my-drawer-2" class="drawer-overlay">
+      <span class="sr-only">Close menu</span>
+      <span class="absolute right-4 top-4 z-10 rounded-lg bg-base-100 px-3 py-2 text-sm font-medium text-base-content shadow-lg ring-1 ring-base-300" aria-hidden="true">Close menu</span>
+    </label>
+    <ul class="menu bg-base-200 min-h-full w-80 p-4 text-base-content" role="list">
       {
         links.map((link) => (
           <li class="mr-8">
@@ -74,3 +79,71 @@ const links = [
     </ul>
   </div>
 </div>
+
+<script>
+  function getDrawerFocusables(container: HTMLElement): HTMLElement[] {
+    const overlay = container.querySelector<HTMLLabelElement>(
+      'label.drawer-overlay'
+    )
+    const links = Array.from(
+      container.querySelectorAll<HTMLAnchorElement>('a[href]')
+    )
+    return overlay ? [overlay, ...links] : links
+  }
+
+  function trapDrawerFocus(e: KeyboardEvent): void {
+    const drawer = document.getElementById('drawer-side')
+    const checkbox = document.getElementById('my-drawer-2') as HTMLInputElement
+    if (!drawer || !checkbox?.checked) return
+
+    const focusables = getDrawerFocusables(drawer)
+    if (focusables.length === 0) return
+
+    const first = focusables[0]
+    const last = focusables[focusables.length - 1]
+    const current = document.activeElement as HTMLElement | null
+
+    if (e.key === 'Escape') {
+      e.preventDefault()
+      checkbox.checked = false
+      document.getElementById('drawer-open-btn')?.focus()
+      document.removeEventListener('keydown', trapDrawerFocus)
+      return
+    }
+
+    if (e.key !== 'Tab') return
+
+    if (e.shiftKey) {
+      if (current === first) {
+        e.preventDefault()
+        last.focus()
+      }
+    } else {
+      if (current === last) {
+        e.preventDefault()
+        first.focus()
+      }
+    }
+  }
+
+  function handleDrawerChange(): void {
+    const checkbox = document.getElementById('my-drawer-2') as HTMLInputElement
+    const drawer = document.getElementById('drawer-side')
+    if (!checkbox || !drawer) return
+
+    if (checkbox.checked) {
+      const focusables = getDrawerFocusables(drawer)
+      const firstLink = focusables.find((el) => el.tagName === 'A') ?? focusables[0]
+      if (firstLink) {
+        setTimeout(() => firstLink.focus(), 0)
+      }
+      document.addEventListener('keydown', trapDrawerFocus)
+    } else {
+      document.removeEventListener('keydown', trapDrawerFocus)
+      document.getElementById('drawer-open-btn')?.focus()
+    }
+  }
+
+  const checkbox = document.getElementById('my-drawer-2')
+  checkbox?.addEventListener('change', handleDrawerChange)
+</script>

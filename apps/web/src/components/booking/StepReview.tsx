@@ -14,7 +14,6 @@ function formatSensoryLabel(key: string): string {
 export function StepReview({
   formData,
   onEditStep,
-  onSubmit,
   isSubmitting,
 }: StepReviewProps) {
   const selectedSensory = (
@@ -128,8 +127,7 @@ export function StepReview({
         aria-busy={isSubmitting}
         className="btn btn-success disabled:btn-disabled flex w-full items-center justify-center gap-3 py-6 font-bold text-xl shadow-xl transition-all hover:scale-[1.02] active:scale-95"
         disabled={isSubmitting}
-        onClick={onSubmit}
-        type="button"
+        type="submit"
       >
         {isSubmitting ? (
           <>

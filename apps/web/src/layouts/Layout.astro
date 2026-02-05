@@ -2,12 +2,14 @@
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import SkipLink from "../components/SkipLink.astro";
 
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title = "Lucy Russell Hair" } = Astro.props;
+const { title = "Lucy Russell Hair", description } = Astro.props;
 ---
 
 <!doctype html>
@@ -18,10 +20,14 @@ const { title = "Lucy Russell Hair" } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    {description && (
+      <meta name="description" content={description} />
+    )}
   </head>
   <body class="flex min-h-screen flex-col bg-base-100 text-base-content">
+    <SkipLink />
     <Header />
-    <main class="flex-1">
+    <main class="flex-1" id="main-content">
       <slot />
     </main>
     <Footer />

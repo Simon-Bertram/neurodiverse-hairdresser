@@ -42,13 +42,14 @@ export function StepAboutYou({
           />
         </div>
 
-        <div>
-          <span className="mb-4 block font-bold text-base-content text-sm">
+        <fieldset className="space-y-4">
+          <legend className="mb-4 font-bold text-base-content text-sm">
             Preferred contact method
-          </span>
+          </legend>
           <div className="grid grid-cols-3 gap-4">
             {CONTACT_OPTIONS.map((opt) => (
               <button
+                aria-pressed={contactMethod === opt.value}
                 className={`flex flex-col items-center gap-2 rounded-2xl border-2 p-4 font-bold transition-all ${
                   contactMethod === opt.value
                     ? "border-primary bg-primary/10 text-primary shadow-md ring-2 ring-primary/20"
@@ -58,12 +59,14 @@ export function StepAboutYou({
                 onClick={() => onContactMethodChange(opt.value)}
                 type="button"
               >
-                <span className="text-xl">{opt.icon}</span>
+                <span aria-hidden="true" className="text-xl">
+                  {opt.icon}
+                </span>
                 <span className="text-xs">{opt.value}</span>
               </button>
             ))}
           </div>
-        </div>
+        </fieldset>
 
         <div>
           <label

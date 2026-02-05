@@ -101,9 +101,9 @@ export default function BookingWizard() {
     <div className="min-h-screen bg-base-100 px-4 py-12 font-sans text-base-content">
       <div className="mx-auto max-w-2xl overflow-hidden rounded-3xl border border-base-300 bg-base-200 shadow-xl">
         <div className="bg-primary p-8 text-primary-content">
-          <h1 className="mb-6 font-bold text-2xl">
+          <h2 className="mb-6 font-bold text-2xl">
             Book an appointment with Lucy
-          </h1>
+          </h2>
           <BookingProgress
             currentStep={step}
             onStepClick={goToStep}
@@ -113,7 +113,16 @@ export default function BookingWizard() {
 
         <BookingInfoBanner />
 
-        <form className="p-8" noValidate onSubmit={(e) => e.preventDefault()}>
+        <form
+          className="p-8"
+          noValidate
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (step === 5 && isStepValid.value && !isSubmitting.value) {
+              handleSubmit();
+            }
+          }}
+        >
           {submitError.value && (
             <div
               className="mb-6 rounded-xl border border-error bg-error/10 px-4 py-3 text-error"
@@ -170,7 +179,6 @@ export default function BookingWizard() {
               formData={data}
               isSubmitting={isSubmitting.value}
               onEditStep={goToStep}
-              onSubmit={handleSubmit}
             />
           )}
 

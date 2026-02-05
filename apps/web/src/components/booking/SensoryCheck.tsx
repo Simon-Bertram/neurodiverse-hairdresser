@@ -16,8 +16,9 @@ export function SensoryCheck({
           ? "border-primary bg-primary/10 shadow-md ring-2 ring-primary/20"
           : "border-base-300 bg-base-200/50 hover:border-base-content/20"
       }`}
+      htmlFor={id}
     >
-      <div className="relative flex-shrink-0">
+      <div className="relative shrink-0">
         <input
           checked={checked}
           className="sr-only"
