@@ -1,4 +1,5 @@
 import { computed, signal } from "@preact/signals";
+import { useMemo } from "preact/hooks";
 import { BookingInfoBanner } from "./BookingInfoBanner";
 import { BookingNav } from "./BookingNav";
 import { BookingProgress } from "./BookingProgress";
@@ -16,10 +17,13 @@ function scrollToTop(): void {
 }
 
 export default function BookingWizard() {
-  const currentStep = signal<StepId>(1);
-  const formData = signal<FormData>({ ...INITIAL_FORM_DATA });
-  const isSubmitting = signal(false);
-  const submitError = signal<string | null>(null);
+  const currentStep = useMemo(() => signal<StepId>(1), []);
+  const formData = useMemo(
+    () => signal<FormData>({ ...INITIAL_FORM_DATA }),
+    []
+  );
+  const isSubmitting = useMemo(() => signal(false), []);
+  const submitError = useMemo(() => signal<string | null>(null), []);
 
   const isStepValid = computed(() =>
     validateStep(currentStep.value, formData.value)
