@@ -1,0 +1,137 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Color scheme – Lucy Russell Hair">
+  <div class="container mx-auto max-w-3xl px-4 py-10">
+    <h1 class="mb-2 text-2xl font-semibold text-base-content">
+      Color scheme
+    </h1>
+    <p class="mb-8 text-base-content/70">
+      hairdresser-dark theme. Full variable list and oklch values are in
+      <code class="rounded bg-base-200 px-1 py-0.5 text-sm"
+        >docs/color-scheme.md</code
+      >.
+    </p>
+
+    <section class="space-y-6">
+      <h2 class="text-lg font-medium text-base-content">Base</h2>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-lg border border-base-300 p-4">
+          <div
+            class="mb-2 h-16 w-full rounded border border-base-300 bg-base-100"
+          ></div>
+          <p class="text-sm font-medium text-base-content">base-100</p>
+          <p class="text-xs text-base-content/60">Page background</p>
+        </div>
+        <div class="rounded-lg border border-base-300 p-4">
+          <div
+            class="mb-2 h-16 w-full rounded border border-base-300 bg-base-200"
+          ></div>
+          <p class="text-sm font-medium text-base-content">base-200</p>
+          <p class="text-xs text-base-content/60">Lighter background</p>
+        </div>
+        <div class="rounded-lg border border-base-300 p-4">
+          <div
+            class="mb-2 h-16 w-full rounded border border-base-300 bg-base-300"
+          ></div>
+          <p class="text-sm font-medium text-base-content">base-300</p>
+          <p class="text-xs text-base-content/60">Elevated surfaces</p>
+        </div>
+        <div class="rounded-lg border border-base-300 p-4">
+          <div
+            class="mb-2 h-16 w-full rounded border border-base-300 bg-base-content"
+          ></div>
+          <p class="text-sm font-medium text-base-content">base-content</p>
+          <p class="text-xs text-base-content/70">Primary text</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-10 space-y-6">
+      <h2 class="text-lg font-medium text-base-content">Primary & secondary</h2>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-lg border border-base-300 p-4">
+          <div
+            class="mb-2 flex h-16 w-full items-center justify-center rounded border border-primary/30 bg-primary"
+          >
+            <span class="text-sm font-medium text-primary-content">Aa</span>
+          </div>
+          <p class="text-sm font-medium text-base-content">primary</p>
+          <p class="text-xs text-base-content/60">Brand / CTAs</p>
+        </div>
+        <div class="rounded-lg border border-base-300 p-4">
+          <div
+            class="mb-2 flex h-16 w-full items-center justify-center rounded border border-secondary/30 bg-secondary"
+          >
+            <span class="text-sm font-medium text-secondary-content">Aa</span>
+          </div>
+          <p class="text-sm font-medium text-base-content">secondary</p>
+          <p class="text-xs text-base-content/60">Supporting UI</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-10 space-y-6">
+      <h2 class="text-lg font-medium text-base-content">Accent & neutral</h2>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-lg border border-base-300 p-4">
+          <div
+            class="mb-2 flex h-16 w-full items-center justify-center rounded border border-accent/30 bg-accent"
+          >
+            <span class="text-sm font-medium text-accent-content">Aa</span>
+          </div>
+          <p class="text-sm font-medium text-base-content">accent</p>
+          <p class="text-xs text-base-content/60">Highlights / focus</p>
+        </div>
+        <div class="rounded-lg border border-base-300 p-4">
+          <div
+            class="mb-2 flex h-16 w-full items-center justify-center rounded border border-neutral/50 bg-neutral"
+          >
+            <span class="text-sm font-medium text-neutral-content">Aa</span>
+          </div>
+          <p class="text-sm font-medium text-base-content">neutral</p>
+          <p class="text-xs text-base-content/60">Cards, borders</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-10 space-y-6">
+      <h2 class="text-lg font-medium text-base-content">Semantic</h2>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-lg border border-base-300 p-4">
+          <div
+            class="mb-2 flex h-16 w-full items-center justify-center rounded border border-info/30 bg-info"
+          >
+            <span class="text-sm font-medium text-info-content">Aa</span>
+          </div>
+          <p class="text-sm font-medium text-base-content">info</p>
+        </div>
+        <div class="rounded-lg border border-base-300 p-4">
+          <div
+            class="mb-2 flex h-16 w-full items-center justify-center rounded border border-success/30 bg-success"
+          >
+            <span class="text-sm font-medium text-success-content">Aa</span>
+          </div>
+          <p class="text-sm font-medium text-base-content">success</p>
+        </div>
+        <div class="rounded-lg border border-base-300 p-4">
+          <div
+            class="mb-2 flex h-16 w-full items-center justify-center rounded border border-warning/30 bg-warning"
+          >
+            <span class="text-sm font-medium text-warning-content">Aa</span>
+          </div>
+          <p class="text-sm font-medium text-base-content">warning</p>
+        </div>
+        <div class="rounded-lg border border-base-300 p-4">
+          <div
+            class="mb-2 flex h-16 w-full items-center justify-center rounded border border-error/30 bg-error"
+          >
+            <span class="text-sm font-medium text-error-content">Aa</span>
+          </div>
+          <p class="text-sm font-medium text-base-content">error</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

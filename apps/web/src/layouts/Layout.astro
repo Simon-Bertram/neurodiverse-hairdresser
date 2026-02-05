@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
 interface Props {
@@ -17,19 +19,11 @@ const { title = "Lucy Russell Hair" } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-base-100 text-base-content">
-    <header>
-      <Header />
-    </header>
-    <main>
+  <body class="flex min-h-screen flex-col bg-base-100 text-base-content">
+    <Header />
+    <main class="flex-1">
       <slot />
     </main>
-    <footer class="mt-8 border-t border-base-300">
-      <div
-        class="container mx-auto max-w-3xl px-4 py-6 text-sm text-base-content/70"
-      >
-        <p>© {new Date().getFullYear()} Lucy Russell Hair</p>
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>

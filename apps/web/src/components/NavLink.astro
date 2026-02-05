@@ -2,9 +2,10 @@
 interface Props {
   href: string;
   label: string;
+  menuItem?: boolean;
 }
 
-const { href, label }: Props = Astro.props;
+const { href, label, menuItem = false }: Props = Astro.props;
 const pathname = Astro.url.pathname;
 
 const isActive =
@@ -16,9 +17,14 @@ const isActive =
 <a
   href={href}
   class:list={[
-    "px-1 py-0.5 transition-colors border-b-2 border-transparent text-base-content/90 hover:text-base-content hover:border-base-content/50",
-    isActive &&
+    !menuItem &&
+      "px-1 py-0.5 transition-colors border-b-2 border-transparent text-base-content/90 hover:text-base-content hover:border-base-content/50 xl:text-xl",
+    !menuItem &&
+      isActive &&
       "text-base-content! border-base-content! font-medium border-b-2",
+    menuItem &&
+      "rounded-lg transition-colors text-base-content/90 hover:bg-base-300 hover:text-base-content",
+    menuItem && isActive && "bg-base-300 text-base-content font-medium",
   ]}
   aria-current={isActive ? "page" : undefined}
 >

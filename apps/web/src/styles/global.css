@@ -8,6 +8,7 @@
  * Info:    65% 0.18 250, Success: 65% 0.18 145, Warning: 75% 0.15 85, Error: 60% 0.22 25
  */
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes: false;
 }

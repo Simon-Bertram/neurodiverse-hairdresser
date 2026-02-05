@@ -4,10 +4,8 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Lucy Russell Hair – Calm, sensory-friendly hair services">
   <div class="container mx-auto max-w-3xl px-4 py-10 m-4">
-    <div class="grid gap-8">
-      <h1 class="text-2xl font-bold">
-        Calm, sensory-friendly hair services
-      </h1>
+    <div class="grid gap-8 prose lg:prose-xl">
+      <h1 class="text-2xl font-bold">Calm, sensory-friendly hair services</h1>
 
       <p class="text-lg leading-relaxed">
         Calm, sensory-friendly hair services at home in Bournemouth, Poole and
@@ -15,10 +13,14 @@ import Layout from "../layouts/Layout.astro";
       </p>
 
       <div class="flex flex-wrap gap-4">
-        <a
-          href="/book"
-          class="btn btn-primary px-6 py-3 text-base"
-        >
+        <button class="btn btn-primary px-6 py-3 text-base">Primary</button>
+        <button class="btn btn-accent px-6 py-3 text-base">Accent</button>
+        <button class="btn btn-secondary px-6 py-3 text-base">Secondary</button>
+        <button class="btn btn-neutral px-6 py-3 text-base">Neutral</button>
+        <button class="btn btn-error px-6 py-3 text-base">Error</button>
+        <button class="btn btn-warning px-6 py-3 text-base">Warning</button>
+        <button class="btn btn-success px-6 py-3 text-base">Success</button>
+        <a href="/book" class="btn btn-info px-6 py-3 text-base">
           Book a quiet appointment
         </a>
         <a
@@ -37,7 +39,9 @@ import Layout from "../layouts/Layout.astro";
           <li>Sensory-aware training: your comfort comes first</li>
           <li>Home visits only: no busy salons</li>
           <li>No surprises: we agree what happens before we start</li>
-          <li>Flexible communication: book and ask questions by email or text</li>
+          <li>
+            Flexible communication: book and ask questions by email or text
+          </li>
         </ul>
       </section>
     </div>
