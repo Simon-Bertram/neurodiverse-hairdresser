@@ -1,27 +1,38 @@
-<footer
-  class="footer sm:footer-horizontal bg-neutral text-neutral-content p-10"
->
-  <nav>
-    <h6 class="footer-title">Services</h6>
-    <a class="link link-hover">Branding</a>
-    <a class="link link-hover">Design</a>
-    <a class="link link-hover">Marketing</a>
-    <a class="link link-hover">Advertisement</a>
-  </nav>
-  <nav>
-    <h6 class="footer-title">Company</h6>
-    <a class="link link-hover">About us</a>
-    <a class="link link-hover">Contact</a>
-    <a class="link link-hover">Jobs</a>
-    <a class="link link-hover">Press kit</a>
-  </nav>
-  <nav>
-    <h6 class="footer-title">Legal</h6>
-    <a class="link link-hover">Terms of use</a>
-    <a class="link link-hover">Privacy policy</a>
-    <a class="link link-hover">Cookie policy</a>
-  </nav>
-  <div>
+---
+const areas = [
+  "Bournemouth",
+  "Poole",
+  "Christchurch",
+  "Southbourne",
+  "Boscombe",
+  "New Milton",
+  "New Forest",
+  "Ringwood",
+  "Hampshire",
+  "Dorset",
+];
+---
+
+<footer class="footer flex flex-col gap-8 bg-neutral text-neutral-content p-10">
+  <div
+    class="flex flex-wrap gap-8 sm:flex-nowrap sm:justify-between sm:items-start"
+  >
+    <nav>
+      <h2 class="footer-title">Our Services</h2>
+      <p class="mb-4">
+        Mobile hairdressing services to help you look and feel your best. Proud
+        to serve neurodivergent clients and carers.
+      </p>
+      <a href="/services" class="link link-hover">Our Services</a>
+    </nav>
+    <div>
+      <h2 class="footer-title">Areas we cover</h2>
+      <ul>
+        {areas.map((area) => <li>{area}</li>)}
+      </ul>
+    </div>
+  </div>
+  <div class="w-full text-center border-t border-neutral-content/20 pt-6">
     <p>© {new Date().getFullYear()} Lucy Russell Hair</p>
   </div>
 </footer>

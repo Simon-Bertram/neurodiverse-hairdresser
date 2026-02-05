@@ -11,9 +11,12 @@
   },
   "dependencies": {
     "@astrojs/node": "^9.5.2",
+    "@astrojs/preact": "^4.1.3",
     "@my-better-t-app/env": "workspace:*",
+    "@preact/signals": "^2.7.0",
     "astro": "^5.16.11",
     "dotenv": "catalog:",
+    "preact": "^10.28.3",
     "zod": "catalog:"
   },
   "devDependencies": {
