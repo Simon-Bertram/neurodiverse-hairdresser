@@ -8,7 +8,6 @@ const links = [
   { href: "/before-your-visit", label: "Before your visit" },
   { href: "/book", label: "Book now" },
   { href: "/contact", label: "Contact" },
-  { href: "/staff", label: "Staff" },
 ];
 ---
 
@@ -63,12 +62,23 @@ const links = [
     </div>
     <hr class="border-base-300" />
   </div>
-  <div class="drawer-side" id="drawer-side" role="navigation" aria-label="Mobile navigation">
+  <div
+    class="drawer-side"
+    id="drawer-side"
+    role="navigation"
+    aria-label="Mobile navigation"
+  >
     <label for="my-drawer-2" class="drawer-overlay">
       <span class="sr-only">Close menu</span>
-      <span class="absolute right-4 top-4 z-10 rounded-lg bg-base-100 px-3 py-2 text-sm font-medium text-base-content shadow-lg ring-1 ring-base-300" aria-hidden="true">Close menu</span>
+      <span
+        class="absolute right-4 top-4 z-10 rounded-lg bg-base-100 px-3 py-2 text-sm font-medium text-base-content shadow-lg ring-1 ring-base-300"
+        aria-hidden="true">Close menu</span
+      >
     </label>
-    <ul class="menu bg-base-200 min-h-full w-80 p-4 text-base-content" role="list">
+    <ul
+      class="menu bg-base-200 min-h-full w-80 p-4 text-base-content"
+      role="list"
+    >
       {
         links.map((link) => (
           <li class="mr-8">
@@ -83,67 +93,68 @@ const links = [
 <script>
   function getDrawerFocusables(container: HTMLElement): HTMLElement[] {
     const overlay = container.querySelector<HTMLLabelElement>(
-      'label.drawer-overlay'
-    )
+      "label.drawer-overlay",
+    );
     const links = Array.from(
-      container.querySelectorAll<HTMLAnchorElement>('a[href]')
-    )
-    return overlay ? [overlay, ...links] : links
+      container.querySelectorAll<HTMLAnchorElement>("a[href]"),
+    );
+    return overlay ? [overlay, ...links] : links;
   }
 
   function trapDrawerFocus(e: KeyboardEvent): void {
-    const drawer = document.getElementById('drawer-side')
-    const checkbox = document.getElementById('my-drawer-2') as HTMLInputElement
-    if (!drawer || !checkbox?.checked) return
+    const drawer = document.getElementById("drawer-side");
+    const checkbox = document.getElementById("my-drawer-2") as HTMLInputElement;
+    if (!drawer || !checkbox?.checked) return;
 
-    const focusables = getDrawerFocusables(drawer)
-    if (focusables.length === 0) return
+    const focusables = getDrawerFocusables(drawer);
+    if (focusables.length === 0) return;
 
-    const first = focusables[0]
-    const last = focusables[focusables.length - 1]
-    const current = document.activeElement as HTMLElement | null
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    const current = document.activeElement as HTMLElement | null;
 
-    if (e.key === 'Escape') {
-      e.preventDefault()
-      checkbox.checked = false
-      document.getElementById('drawer-open-btn')?.focus()
-      document.removeEventListener('keydown', trapDrawerFocus)
-      return
+    if (e.key === "Escape") {
+      e.preventDefault();
+      checkbox.checked = false;
+      document.getElementById("drawer-open-btn")?.focus();
+      document.removeEventListener("keydown", trapDrawerFocus);
+      return;
     }
 
-    if (e.key !== 'Tab') return
+    if (e.key !== "Tab") return;
 
     if (e.shiftKey) {
       if (current === first) {
-        e.preventDefault()
-        last.focus()
+        e.preventDefault();
+        last.focus();
       }
     } else {
       if (current === last) {
-        e.preventDefault()
-        first.focus()
+        e.preventDefault();
+        first.focus();
       }
     }
   }
 
   function handleDrawerChange(): void {
-    const checkbox = document.getElementById('my-drawer-2') as HTMLInputElement
-    const drawer = document.getElementById('drawer-side')
-    if (!checkbox || !drawer) return
+    const checkbox = document.getElementById("my-drawer-2") as HTMLInputElement;
+    const drawer = document.getElementById("drawer-side");
+    if (!checkbox || !drawer) return;
 
     if (checkbox.checked) {
-      const focusables = getDrawerFocusables(drawer)
-      const firstLink = focusables.find((el) => el.tagName === 'A') ?? focusables[0]
+      const focusables = getDrawerFocusables(drawer);
+      const firstLink =
+        focusables.find((el) => el.tagName === "A") ?? focusables[0];
       if (firstLink) {
-        setTimeout(() => firstLink.focus(), 0)
+        setTimeout(() => firstLink.focus(), 0);
       }
-      document.addEventListener('keydown', trapDrawerFocus)
+      document.addEventListener("keydown", trapDrawerFocus);
     } else {
-      document.removeEventListener('keydown', trapDrawerFocus)
-      document.getElementById('drawer-open-btn')?.focus()
+      document.removeEventListener("keydown", trapDrawerFocus);
+      document.getElementById("drawer-open-btn")?.focus();
     }
   }
 
-  const checkbox = document.getElementById('my-drawer-2')
-  checkbox?.addEventListener('change', handleDrawerChange)
+  const checkbox = document.getElementById("my-drawer-2");
+  checkbox?.addEventListener("change", handleDrawerChange);
 </script>

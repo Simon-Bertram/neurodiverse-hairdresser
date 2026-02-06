@@ -6,23 +6,19 @@ import Layout from "../layouts/Layout.astro";
   title="Lucy Russell Hair – Calm, sensory-friendly hair services"
   description="Calm, sensory-friendly hair services at home in Bournemouth, Poole and surrounding areas. Mobile hairdressing for neurodivergent clients and carers."
 >
-  <div class="container mx-auto max-w-3xl px-4 py-10 m-4">
-    <div class="grid gap-8 prose lg:prose-xl">
-      <h1 class="text-2xl font-bold">Calm, sensory-friendly hair services</h1>
+  <div class="container mx-auto max-w-4xl px-4 py-10 m-4">
+    <div class="grid gap-8 prose lg:prose-xl xl:prose-4xl">
+      <h1 class="text-2xl font-bold">
+        Sensory-friendly mobile hairdressing in Bournemouth &amp; Poole
+      </h1>
 
       <p class="text-lg leading-relaxed">
-        Calm, sensory-friendly hair services at home in Bournemouth, Poole and
-        surrounding areas (within 25 miles).
+        Calm, sensory-friendly mobile hairdressing at home in Bournemouth, Poole
+        and surrounding areas (within 25 miles), specialising in neurodivergent
+        clients, carers and anyone who prefers quiet, predictable appointments.
       </p>
 
       <div class="flex flex-wrap gap-4">
-        <button class="btn btn-primary px-6 py-3 text-base">Primary</button>
-        <button class="btn btn-accent px-6 py-3 text-base">Accent</button>
-        <button class="btn btn-secondary px-6 py-3 text-base">Secondary</button>
-        <button class="btn btn-neutral px-6 py-3 text-base">Neutral</button>
-        <button class="btn btn-error px-6 py-3 text-base">Error</button>
-        <button class="btn btn-warning px-6 py-3 text-base">Warning</button>
-        <button class="btn btn-success px-6 py-3 text-base">Success</button>
         <a href="/book" class="btn btn-info px-6 py-3 text-base">
           Book a quiet appointment
         </a>
@@ -42,11 +38,58 @@ import Layout from "../layouts/Layout.astro";
           <li>Sensory-aware training: your comfort comes first</li>
           <li>Home visits only: no busy salons</li>
           <li>No surprises: we agree what happens before we start</li>
+        </ul>
+      </section>
+
+      <section class="mt-6" aria-labelledby="services-heading">
+        <h2 id="services-heading" class="text-xl font-semibold mb-4">
+          Services Lucy offers
+        </h2>
+        <ul class="list-disc list-inside space-y-2 text-base">
+          <li>Mobile haircuts at home (short and long hair)</li>
+          <li>Fringe trims and tidy-ups between cuts</li>
+          <li>Gentle restyles at your pace</li>
+          <li>Sensory-friendly appointments for neurodivergent clients</li>
+        </ul>
+      </section>
+
+      <section class="space-y-4" aria-labelledby="bio-heading">
+        <h2 id="bio-heading" class="text-xl font-semibold">Lucy Russell</h2>
+        <p class="text-base leading-relaxed">
+          Lucy has years of experience in hairdressing and focuses on home
+          visits and calm environments. She works in Bournemouth, Poole and
+          surrounding areas (within 25 miles).
+        </p>
+        <p class="text-base leading-relaxed">
+          Lucy has training in sensory awareness and neurodiversity-friendly
+          practice. She is committed to following your preferences and pace: you
+          say what you need (e.g. quiet, breaks, dry cut, step-by-step
+          explanations), and she will work with you.
+        </p>
+      </section>
+
+      <section
+        class="border-t border-base-300 pt-6"
+        aria-labelledby="approach-heading"
+      >
+        <h2 id="approach-heading" class="text-xl font-semibold mb-4">
+          How Lucy works
+        </h2>
+        <ul class="list-disc list-inside space-y-2 text-base">
+          <li>Home visits only: no busy salons</li>
+          <li>Consultation first: we agree what happens before we start</li>
+          <li>Your pace: breaks and changes are always okay</li>
           <li>
-            Flexible communication: book and ask questions by email or text
+            Clear communication: by email, text or phone, whatever you prefer
           </li>
         </ul>
       </section>
+
+      <div
+        class="aspect-square max-w-xs rounded-lg bg-base-200 flex items-center justify-center text-base-content/50"
+      >
+        <span class="text-sm">Photo of Lucy (optional)</span>
+      </div>
     </div>
   </div>
 </Layout>
