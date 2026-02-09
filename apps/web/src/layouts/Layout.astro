@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { Font } from "astro:assets";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import SkipLink from "../components/SkipLink.astro";
@@ -19,6 +20,9 @@ const {
 <html lang="en" data-theme="hairdresser-dark">
   <head>
     <meta charset="UTF-8" />
+    <!-- Preload fonts to prevent flash of unstyled text -->
+    <Font cssVariable="--font-fraunces" preload />
+    <Font cssVariable="--font-source-sans-3" preload />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!-- Fonts: preconnect then preload for performance -->
@@ -45,7 +49,9 @@ const {
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
   </head>
-  <body class="flex min-h-screen flex-col bg-base-100 font-sans text-base-content">
+  <body
+    class="flex min-h-screen flex-col bg-base-100 font-sans text-base-content"
+  >
     <SkipLink />
     <Header />
     <main class="flex-1" id="main-content">

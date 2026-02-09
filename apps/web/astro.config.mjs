@@ -18,6 +18,16 @@ export default defineConfig({
       }),
     },
   },
+  experimental: {
+    fontProviders: {
+      google: {
+        fonts: [
+          { family: "Fraunces", weights: [400, 600] },
+          { family: "Source Sans 3", weights: [400, 600] },
+        ],
+      },
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },
