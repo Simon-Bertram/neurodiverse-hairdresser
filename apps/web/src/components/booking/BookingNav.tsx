@@ -23,7 +23,7 @@ export function BookingNav({
         </button>
       )}
       <button
-        className={`flex flex-[2] items-center justify-center gap-2 rounded-2xl px-6 py-5 font-bold text-lg shadow-lg transition-all ${
+        className={`flex flex-2 items-center justify-center gap-2 rounded-2xl px-6 py-5 font-bold text-lg shadow-lg transition-all ${
           isStepValid
             ? "btn btn-primary hover:scale-[1.02] active:scale-95"
             : "btn btn-disabled cursor-not-allowed bg-base-300 text-base-content/50 shadow-none"

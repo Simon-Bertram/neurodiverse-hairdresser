@@ -18,16 +18,16 @@ const areas = [
     class="flex flex-wrap gap-8 sm:flex-nowrap sm:justify-between sm:items-start max-w-3xl mx-auto"
   >
     <nav aria-label="Footer services">
-      <h2 class="footer-title">Our Services</h2>
-      <p class="mb-4">
+      <h2 class="footer-title xl:text-xl">Our Services</h2>
+      <p class="mb-4 prose lg:prose-xl">
         Mobile hairdressing services to help you look and feel your best. Proud
         to serve neurodivergent clients and carers.
       </p>
-      <a href="/services" class="link link-hover">Our Services</a>
+      <a href="/services" class="link link-hover xl:text-xl">Our Services</a>
     </nav>
     <div>
-      <h2 class="footer-title">Areas we cover</h2>
-      <ul>
+      <h2 class="footer-title xl:text-xl">Areas we cover</h2>
+      <ul class="xl:text-xl">
         {areas.map((area) => <li>{area}</li>)}
       </ul>
     </div>
