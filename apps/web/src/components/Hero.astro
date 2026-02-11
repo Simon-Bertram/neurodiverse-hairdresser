@@ -1,10 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import heroImage from "apps/web/src/eugene-chystiakov-tLhBmVFALHY-unsplash.jpg";
+import heroImage from "../eugene-chystiakov-tLhBmVFALHY-unsplash.jpg";
+import AreasVisited from "./AreasVisited.astro";
 ---
 
 <div class="hero bg-base-200 min-h-screen">
-  <div class="hero-content flex-col lg:flex-row">
+  <div class="hero-content flex-col lg:flex-row gap-8 xl:gap-20">
     <Image
       src={heroImage}
       alt="Calm mobile hairdressing scene"
@@ -13,13 +14,30 @@ import heroImage from "apps/web/src/eugene-chystiakov-tLhBmVFALHY-unsplash.jpg";
       class="max-w-sm rounded-lg shadow-2xl"
     />
     <div>
-      <h1 class="text-5xl font-bold">Box Office News!</h1>
-      <p class="py-6">
-        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-        excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a
-        id nisi.
+      <h1
+        class="text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-bold leading-relaxed"
+      >
+        Sensory-friendly mobile hairdressing in Bournemouth &amp; Poole
+      </h1>
+      <p class="py-6 prose lg:prose-lg xl:prose-2xl leading-relaxed">
+        Calm, sensory-friendly mobile hairdressing at home in Bournemouth, Poole
+        and surrounding areas (within 25 miles), specialising in neurodivergent
+        clients, carers and anyone who prefers quiet, predictable appointments.
       </p>
-      <button class="btn btn-primary">Get Started</button>
+      <div class="flex flex-wrap gap-4">
+        <a class="btn btn-primary xl:btn-xl" href="/book"
+          >Book a quiet appointment</a
+        >
+
+        <a
+          href="/before-your-visit"
+          class="btn btn-outline btn-secondary xl:btn-xl"
+        >
+          Before your visit
+        </a>
+
+        <AreasVisited />
+      </div>
     </div>
   </div>
 </div>
