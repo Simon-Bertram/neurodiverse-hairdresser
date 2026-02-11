@@ -18,6 +18,23 @@ const {
 <!doctype html>
 <html lang="en" data-theme="sereneSage">
   <head>
+    <script is:inline>
+      // ☝️ This script prevent the FART effect.
+      if (localStorage.getItem("theme") === null) {
+        document.documentElement.setAttribute("data-theme", "sereneSage");
+      } else
+        document.documentElement.setAttribute(
+          "data-theme",
+          localStorage.getItem("theme"),
+        );
+      // "theme" LocalStorage value is set by the package to remember user preference.
+      // The value is checked and applied before rendering anything.
+    </script>
+    <script>
+      import { themeChange } from "theme-change";
+      themeChange();
+      // 👆 you could import the CDN directly instead of these two lines
+    </script>
     <meta charset="UTF-8" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

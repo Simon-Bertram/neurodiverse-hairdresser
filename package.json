@@ -25,6 +25,7 @@
   "dependencies": {
     "@my-better-t-app/env": "workspace:*",
     "dotenv": "catalog:",
+    "theme-change": "^2.5.0",
     "zod": "catalog:"
   },
   "devDependencies": {
