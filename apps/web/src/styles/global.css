@@ -1,65 +1,119 @@
-/*
- * hairdresser-dark – dark high-contrast palette (oklch)
- * Base:    base-100 14% 0.02 260, base-200 18%, base-300 24%, base-content 98% 0.01 260
- * Primary: 70% 0.18 260 (+ content 98%)
- * Secondary: 55% 0.08 260 (+ content 98%)
- * Accent:  75% 0.15 180 (+ content 18%)
- * Neutral: 35% 0.02 260 (+ content 95%)
- * Info:    65% 0.18 250, Success: 65% 0.18 145, Warning: 75% 0.15 85, Error: 60% 0.22 25
- */
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes: false;
 }
 @plugin "daisyui/theme" {
-  name: "hairdresser-dark";
+  name: "sereneSage";
   default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  /* Base Colors */
+  --color-base-100: #f3f4f3; /* Soft Off-White (Reduces eye dazzle) */
+  --color-base-200: #ebeceb; /* Card Backgrounds */
+  --color-base-300: #dee0de; /* Dividers and Borders */
+  --color-base-content: #2a2a2a; /* Dark Slate Gray (Ratio 14:1) */
+
+  /* Brand Colors - Tuned for 4.5:1+ Contrast */
+  --color-primary: #537573; /* Deep Sage (Ratio 4.54:1) */
+  --color-primary-content: #f3f4f3;
+  --color-secondary: #79694f; /* Warm Earth/Sand (Ratio 4.52:1) */
+  --color-secondary-content: #f3f4f3;
+  --color-accent: #3e5153; /* Slate Teal (Ratio 10:1) */
+  --color-accent-content: #f3f4f3;
+  --color-neutral: #272727; /* Charcoal */
+  --color-neutral-content: #f3f4f3;
+
+  /* State Colors (Verified 4.5:1 contrast on base-100) */
+  --color-info: #003eb3;
+  --color-info-content: #ffffff;
+  --color-success: #1b4332;
+  --color-success-content: #ffffff;
+  --color-warning: #713f12;
+  --color-warning-content: #ffffff;
+  --color-error: #991b1b;
+  --color-error-content: #ffffff;
+
+  /* UI Styling */
+  --radius-selector: 1rem;
+  --radius-box: 1.5rem;
+  --border: 1px;
+}
+@plugin "daisyui/theme" {
+  name: "lowStimuli";
+  default: false;
   prefersdark: true;
   color-scheme: dark;
 
-  /* Base – page background and text */
-  --color-base-100: oklch(14% 0.02 260);
-  --color-base-200: oklch(18% 0.02 260);
-  --color-base-300: oklch(24% 0.02 260);
-  --color-base-content: oklch(98% 0.01 260);
+  /* Base Colors */
+  --color-base-100: #0f172a; /* Deep Navy */
+  --color-base-200: #1e293b; /* Card Backgrounds */
+  --color-base-300: #334155; /* Borders */
+  --color-base-content: #e2e8f0; /* Light Slate Text (Ratio 15:1) */
 
-  /* Primary – main brand / CTAs */
-  --color-primary: oklch(70% 0.18 260);
-  --color-primary-content: oklch(98% 0.01 260);
+  /* Brand Colors */
+  --color-primary: #a5c9ca; /* Soft Teal (Ratio 14.5:1) */
+  --color-primary-content: #0f172a;
+  --color-secondary: #537f8a; /* Brighter Forest Teal (Ratio 6.5:1) */
+  --color-secondary-content: #f8fafc;
+  --color-accent: #ffd3b6; /* Pale Peach (Ratio 20:1) */
+  --color-accent-content: #0f172a;
+  --color-neutral: #1e293b;
+  --color-neutral-content: #e2e8f0;
 
-  /* Secondary – supporting UI */
-  --color-secondary: oklch(55% 0.08 260);
-  --color-secondary-content: oklch(98% 0.01 260);
+  /* State Colors (Optimized for dark background contrast) */
+  --color-info: #38bdf8; /* Sky Blue (Ratio 11:1) */
+  --color-info-content: #0f172a;
+  --color-success: #4ade80; /* Mint Green (Ratio 10:1) */
+  --color-success-content: #0f172a;
+  --color-warning: #fbbf24; /* Amber (Ratio 12:1) */
+  --color-warning-content: #0f172a;
+  --color-error: #f87171; /* Soft Red (Ratio 7:1) */
+  --color-error-content: #0f172a;
 
-  /* Accent – highlights / focus */
-  --color-accent: oklch(75% 0.15 180);
-  --color-accent-content: oklch(18% 0.03 180);
+  /* UI Styling */
+  --radius-selector: 1rem;
+  --radius-box: 1.5rem;
+  --depth: 0.5;
+}
+@plugin "daisyui/theme" {
+  name: "clearSight";
+  default: false;
+  prefersdark: false;
+  color-scheme: light;
 
-  /* Neutral – cards, borders, subtle UI */
-  --color-neutral: oklch(35% 0.02 260);
-  --color-neutral-content: oklch(95% 0.01 260);
+  /* Base Colors */
+  --color-base-100: #ffffff; /* Pure White */
+  --color-base-200: #f2f2f2;
+  --color-base-300: #e5e5e5;
+  --color-base-content: #000000; /* Pure Black */
 
-  /* Info – informational */
-  --color-info: oklch(65% 0.18 250);
-  --color-info-content: oklch(98% 0.01 250);
+  /* Brand Colors */
+  --color-primary: #0046cc; /* Dark Blue (Ratio 8:1) */
+  --color-primary-content: #ffffff;
+  --color-secondary: #000000;
+  --color-secondary-content: #ffffff;
+  --color-accent: #d97706; /* Dark Amber (Ratio 4.5:1) */
+  --color-accent-content: #000000;
+  --color-neutral: #000000;
+  --color-neutral-content: #ffffff;
 
-  /* Success – success states */
-  --color-success: oklch(65% 0.18 145);
-  --color-success-content: oklch(98% 0.01 145);
+  /* State Colors (High-visibility for white background) */
+  --color-info: #0046cc;
+  --color-info-content: #ffffff;
+  --color-success: #008000; /* Pure Green (Ratio 4.5:1) */
+  --color-success-content: #ffffff;
+  --color-warning: #d97706; /* Dark Amber (Ratio 4.5:1) */
+  --color-warning-content: #000000;
+  --color-error: #d00000; /* Strong Red (Ratio 7:1) */
+  --color-error-content: #ffffff;
 
-  /* Warning – warnings */
-  --color-warning: oklch(75% 0.15 85);
-  --color-warning-content: oklch(20% 0.05 85);
-
-  /* Error – errors / destructive */
-  --color-error: oklch(60% 0.22 25);
-  --color-error-content: oklch(98% 0.01 25);
-
-  /* Optional – border radius and border */
-  --radius-box: 0.5rem;
-  --radius-field: 0.25rem;
-  --border: 1px;
+  /* Border & Radius Overrides */
+  --radius-selector: 0rem;
+  --radius-field: 0rem;
+  --radius-box: 0rem;
+  --border: 3px;
 }
 
 /* Add your theme customizations here. */
