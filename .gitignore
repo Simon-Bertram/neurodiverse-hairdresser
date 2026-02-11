@@ -24,6 +24,9 @@ build
 *~
 .DS_Store
 
+# Astro v6 beta repo (for reference only)
+reference/
+
 # Logs
 logs
 *.log

@@ -66,8 +66,8 @@
 /* See the TailwindCSS v4 docs for more info: https://tailwindcss.com/docs/v4-beta */
 
 @theme {
-  --font-sans: "Source Sans 3", sans-serif;
-  --font-serif: "Fraunces", serif;
+  --font-sans: var(--font-source-sans-3), sans-serif;
+  --font-serif: var(--font-fraunces), serif;
 }
 
 /* Headings use serif; body uses sans (set by font-sans on body/layout) */

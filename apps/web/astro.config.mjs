@@ -2,7 +2,7 @@ import node from "@astrojs/node";
 import preact from "@astrojs/preact";
 // @ts-check
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig, envField } from "astro/config";
+import { defineConfig, envField, fontProviders } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,14 +19,20 @@ export default defineConfig({
     },
   },
   experimental: {
-    fontProviders: {
-      google: {
-        fonts: [
-          { family: "Fraunces", weights: [400, 600] },
-          { family: "Source Sans 3", weights: [400, 600] },
-        ],
+    fonts: [
+      {
+        provider: fontProviders.google(),
+        name: "Fraunces",
+        cssVariable: "--font-fraunces",
+        weights: [400, 600],
       },
-    },
+      {
+        provider: fontProviders.google(),
+        name: "Source Sans 3",
+        cssVariable: "--font-source-sans-3",
+        weights: [400, 600],
+      },
+    ],
   },
   vite: {
     plugins: [tailwindcss()],
