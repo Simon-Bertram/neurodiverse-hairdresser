@@ -38,7 +38,7 @@
   /* UI Styling */
   --radius-selector: 1rem;
   --radius-box: 1.5rem;
-  --border: 1px;
+  /* --border: 1px; */
 }
 @plugin "daisyui/theme" {
   name: "lowStimuli";
@@ -113,7 +113,7 @@
   --radius-selector: 0rem;
   --radius-field: 0rem;
   --radius-box: 0rem;
-  --border: 3px;
+  /* --border: 3px; */
 }
 
 /* Add your theme customizations here. */

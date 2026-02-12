@@ -13,7 +13,7 @@ export function StepAppointment({
     <div className="space-y-8">
       <header>
         <h2 className="font-bold text-2xl text-base-content">Appointment</h2>
-        <p className="mt-1 text-base-content/70">
+        <p className="mt-1 text-base-content/70 text-lg xl:text-xl">
           What can Lucy do for you today?
         </p>
       </header>
@@ -21,7 +21,7 @@ export function StepAppointment({
       <div className="space-y-6">
         <div>
           <label
-            className="mb-2 block font-bold text-base-content text-sm"
+            className="mb-2 block font-bold text-base-content text-lg xl:text-xl"
             htmlFor="service"
           >
             Service you want
@@ -47,7 +47,7 @@ export function StepAppointment({
 
         <div>
           <label
-            className="mb-2 block font-bold text-base-content text-sm"
+            className="mb-2 block font-bold text-base-content text-lg xl:text-xl"
             htmlFor="times"
           >
             Preferred days or times
@@ -66,7 +66,7 @@ export function StepAppointment({
 
         <div>
           <label
-            className="mb-2 block font-bold text-base-content text-sm"
+            className="mb-2 block font-bold text-base-content text-lg xl:text-xl"
             htmlFor="notes"
           >
             Any questions or notes?

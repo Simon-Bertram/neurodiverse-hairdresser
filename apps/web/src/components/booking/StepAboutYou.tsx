@@ -10,40 +10,55 @@ export function StepAboutYou({
   name,
   contactMethod,
   contactDetail,
+  step1Error,
   onNameChange,
   onContactMethodChange,
   onContactDetailChange,
 }: StepAboutYouProps) {
+  const nameError =
+    step1Error?.field === "name" ? step1Error.message : undefined;
+  const contactDetailError =
+    step1Error?.field === "contactDetail" ? step1Error.message : undefined;
+
   return (
     <div className="space-y-8">
       <header>
         <h2 className="font-bold text-2xl text-base-content">Your details</h2>
-        <p className="mt-1 text-base-content/70">
+        <p className="mt-1 text-base-content/70 text-lg">
           Tell us who you are and how we can reach you.
         </p>
       </header>
 
-      <div className="space-y-6">
+      <div className="mb-4 space-y-8">
         <div>
           <label
-            className="mb-2 block font-bold text-base-content text-sm"
+            className="mb-3 block font-bold text-base-content text-lg xl:text-xl"
             htmlFor="name"
           >
             Your full name
           </label>
           <input
+            aria-describedby={nameError ? "name-error" : undefined}
+            aria-invalid={!!nameError}
             autoComplete="name"
-            className="input input-bordered w-full rounded-2xl outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/20"
+            className={`input input-bordered w-full rounded-2xl text-md outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/20 ${
+              nameError ? "input-error border-error" : ""
+            }`}
             id="name"
             onInput={(e) => onNameChange((e.target as HTMLInputElement).value)}
             placeholder="e.g. Alex Smith"
             type="text"
             value={name}
           />
+          {nameError && (
+            <p className="mt-2 text-error text-sm" id="name-error" role="alert">
+              {nameError}
+            </p>
+          )}
         </div>
 
-        <fieldset className="space-y-4">
-          <legend className="mb-4 font-bold text-base-content text-sm">
+        <fieldset className="space-y-8">
+          <legend className="mb-4 font-bold text-base-content text-lg xl:text-xl">
             Preferred contact method
           </legend>
           <div className="grid grid-cols-3 gap-4">
@@ -70,14 +85,18 @@ export function StepAboutYou({
 
         <div>
           <label
-            className="mb-2 block font-bold text-base-content text-sm"
+            className="mb-2 block font-bold text-base-content text-lg xl:text-xl"
             htmlFor="detail"
           >
             {contactMethod} address or number
           </label>
           <input
+            aria-describedby={contactDetailError ? "detail-error" : undefined}
+            aria-invalid={!!contactDetailError}
             autoComplete={contactMethod === "Email" ? "email" : "tel"}
-            className="input input-bordered w-full rounded-2xl outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/20"
+            className={`input input-bordered w-full rounded-2xl text-md outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/20 ${
+              contactDetailError ? "input-error border-error" : ""
+            }`}
             id="detail"
             onInput={(e) =>
               onContactDetailChange((e.target as HTMLInputElement).value)
@@ -88,6 +107,15 @@ export function StepAboutYou({
             type={contactMethod === "Email" ? "email" : "tel"}
             value={contactDetail}
           />
+          {contactDetailError && (
+            <p
+              className="mt-2 text-error text-sm"
+              id="detail-error"
+              role="alert"
+            >
+              {contactDetailError}
+            </p>
+          )}
         </div>
       </div>
     </div>

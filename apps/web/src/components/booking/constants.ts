@@ -59,7 +59,6 @@ export const SENSORY_OPTIONS: SensoryOption[] = [
     label: "Tell me before using clippers or loud tools",
     categoryId: "auditory",
   },
-  { id: "noMusic", label: "No music", categoryId: "auditory" },
   { id: "noWash", label: "Prefer dry cut (no wash)", categoryId: "tactile" },
   { id: "lightTouch", label: "Light touch only", categoryId: "tactile" },
   {
@@ -74,7 +73,7 @@ export const SENSORY_OPTIONS: SensoryOption[] = [
   },
   {
     id: "mirrorOptional",
-    label: "Mirror optional (tell me when to look)",
+    label: "I prefer not to see myself in the mirror during the appointment",
     categoryId: "visual",
   },
   {

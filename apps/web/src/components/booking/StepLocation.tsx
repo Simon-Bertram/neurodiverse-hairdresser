@@ -12,7 +12,7 @@ export function StepLocation({ address, onAddressChange }: StepLocationProps) {
 
       <div>
         <label
-          className="mb-2 block font-bold text-base-content text-sm"
+          className="mb-2 block font-bold text-base-content text-lg xl:text-xl"
           htmlFor="address"
         >
           Full address or postcode
@@ -23,7 +23,7 @@ export function StepLocation({ address, onAddressChange }: StepLocationProps) {
           onInput={(e) =>
             onAddressChange((e.target as HTMLTextAreaElement).value)
           }
-          placeholder="Street, City, Postcode"
+          placeholder="Street, Town, Postcode"
           rows={4}
           value={address}
         />

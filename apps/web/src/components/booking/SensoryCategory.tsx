@@ -14,7 +14,7 @@ export function SensoryCategory({
         <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/20 text-xl">
           {icon}
         </span>
-        <span className="text-lg tracking-tight">{title}</span>
+        <span className="text-lg tracking-tight xl:text-xl">{title}</span>
       </h3>
       <div className="space-y-3">{children}</div>
     </div>

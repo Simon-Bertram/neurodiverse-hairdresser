@@ -54,7 +54,7 @@ export function SensoryCheck({
         </div>
       </div>
       <span
-        className={`font-bold text-sm leading-tight ${
+        className={`font-bold text-lg leading-tight xl:text-xl ${
           checked ? "text-base-content" : "text-base-content/80"
         }`}
       >

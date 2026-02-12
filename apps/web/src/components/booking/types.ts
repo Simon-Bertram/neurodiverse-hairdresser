@@ -58,10 +58,18 @@ export interface SensoryCategoryProps {
   children: ComponentChildren;
 }
 
+/** Shown under a field after Continue when step 1 validation fails. */
+export interface Step1FieldError {
+  field: "name" | "contactDetail";
+  message: string;
+}
+
 export interface StepAboutYouProps {
   name: string;
   contactMethod: ContactMethod;
   contactDetail: string;
+  /** Set only after user clicks Continue; identifies which field is invalid. */
+  step1Error: Step1FieldError | null;
   onNameChange: (value: string) => void;
   onContactMethodChange: (value: ContactMethod) => void;
   onContactDetailChange: (value: string) => void;

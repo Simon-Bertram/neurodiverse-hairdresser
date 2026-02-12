@@ -11,7 +11,7 @@ export function BookingProgress({
   return (
     <nav
       aria-label="Progress"
-      className="relative flex items-center justify-between"
+      className="relative flex items-center justify-between p-4"
     >
       {steps.map((step) => {
         const isCurrent = currentStep === step.id;
@@ -43,7 +43,7 @@ export function BookingProgress({
               )}
             </button>
             <span
-              className={`mt-3 font-bold text-[10px] uppercase tracking-widest ${
+              className={`mt-3 font-bold uppercase tracking-widest ${
                 isCurrent ? "opacity-100" : "opacity-60"
               }`}
             >
