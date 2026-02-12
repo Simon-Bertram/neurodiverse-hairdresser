@@ -30,6 +30,7 @@ export interface FormData {
   service: string;
   preferredTime: string;
   notes: string;
+  otherPreferences: string;
   sensory: SensoryPrefs;
 }
 
@@ -91,7 +92,9 @@ export interface StepAppointmentProps {
 
 export interface StepSensoryProps {
   sensory: SensoryPrefs;
+  otherPreferences: string;
   onSensoryChange: (key: keyof SensoryPrefs, value: boolean) => void;
+  onOtherPreferencesChange: (value: string) => void;
 }
 
 export interface StepReviewProps {

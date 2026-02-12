@@ -35,6 +35,7 @@ export const INITIAL_FORM_DATA: FormData = {
   service: "",
   preferredTime: "",
   notes: "",
+  otherPreferences: "",
   sensory: { ...initialSensory },
 };
 

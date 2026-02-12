@@ -74,10 +74,10 @@ export function StepAboutYou({
                 onClick={() => onContactMethodChange(opt.value)}
                 type="button"
               >
-                <span aria-hidden="true" className="text-xl">
+                <span aria-hidden="true" className="text-3xl">
                   {opt.icon}
                 </span>
-                <span className="text-xs">{opt.value}</span>
+                <span className="text-md">{opt.value}</span>
               </button>
             ))}
           </div>

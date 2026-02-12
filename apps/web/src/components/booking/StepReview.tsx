@@ -120,6 +120,11 @@ export function StepReview({
               </p>
             )}
           </div>
+          {formData.otherPreferences && (
+            <p className="mt-3 whitespace-pre-wrap text-base-content/90 text-sm">
+              {formData.otherPreferences}
+            </p>
+          )}
         </div>
       </div>
 

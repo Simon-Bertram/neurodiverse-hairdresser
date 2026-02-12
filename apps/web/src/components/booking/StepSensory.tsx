@@ -3,7 +3,12 @@ import { SensoryCategory } from "./SensoryCategory";
 import { SensoryCheck } from "./SensoryCheck";
 import type { StepSensoryProps } from "./types";
 
-export function StepSensory({ sensory, onSensoryChange }: StepSensoryProps) {
+export function StepSensory({
+  sensory,
+  otherPreferences,
+  onSensoryChange,
+  onOtherPreferencesChange,
+}: StepSensoryProps) {
   return (
     <div className="space-y-8">
       <header>
@@ -38,6 +43,25 @@ export function StepSensory({ sensory, onSensoryChange }: StepSensoryProps) {
             </SensoryCategory>
           );
         })}
+
+        <div>
+          <label
+            className="mb-2 block font-bold text-base-content text-lg xl:text-xl"
+            htmlFor="other-preferences"
+          >
+            Any other preferences
+          </label>
+          <textarea
+            className="textarea textarea-bordered w-full rounded-2xl text-md outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/20"
+            id="other-preferences"
+            onInput={(e) =>
+              onOtherPreferencesChange((e.target as HTMLTextAreaElement).value)
+            }
+            placeholder="Anything else we should know?"
+            rows={3}
+            value={otherPreferences}
+          />
+        </div>
       </div>
     </div>
   );

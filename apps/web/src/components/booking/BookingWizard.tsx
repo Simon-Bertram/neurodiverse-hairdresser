@@ -93,7 +93,11 @@ export default function BookingWizard() {
 
           {step === 4 && (
             <StepSensory
+              onOtherPreferencesChange={(v) =>
+                setFormField("otherPreferences", v)
+              }
               onSensoryChange={setSensory}
+              otherPreferences={formValues.otherPreferences}
               sensory={formValues.sensory}
             />
           )}
