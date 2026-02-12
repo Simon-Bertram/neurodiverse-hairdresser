@@ -12,85 +12,87 @@ const links = [
 ];
 ---
 
-<div class="drawer">
-  <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content flex flex-col">
-    <!-- Navbar -->
-    <div class="navbar bg-primary w-full">
-      <div class="flex-none lg:hidden">
-        <label
-          for="my-drawer-2"
-          id="drawer-open-btn"
-          class="btn btn-square btn-ghost"
-        >
-          <span class="sr-only">Open menu</span>
-          <span class="text-sm">Menu</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            class="inline-block h-6 w-6 stroke-current"
-            aria-hidden="true"
+<header>
+  <div class="drawer">
+    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content flex flex-col">
+      <!-- Navbar -->
+      <div class="navbar bg-primary w-full">
+        <div class="flex-none lg:hidden">
+          <label
+            for="my-drawer-2"
+            id="drawer-open-btn"
+            class="btn btn-square btn-ghost"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </label>
+            <span class="sr-only">Open menu</span>
+            <span class="text-sm">Menu</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              class="inline-block h-6 w-6 stroke-current"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </label>
+        </div>
+        <div class="mx-2 flex-1 px-2">
+          <a
+            href="/"
+            class="text-primary-content hover:text-primary-content/90"
+            aria-label="Lucy Russell Hair – Home"
+          >
+            <Logo />
+          </a>
+        </div>
+        <nav class="hidden flex-none lg:block" aria-label="Main navigation">
+          <ul class="menu menu-horizontal px-1">
+            {
+              links.map((link) => (
+                <li class="mr-8">
+                  <NavLink href={link.href} label={link.label} />
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+        <ThemeSwitch />
       </div>
-      <div class="mx-2 flex-1 px-2">
-        <a
-          href="/"
-          class="text-primary-content hover:text-primary-content/90"
-          aria-label="Lucy Russell Hair – Home"
-        >
-          <Logo />
-        </a>
-      </div>
-      <nav class="hidden flex-none lg:block" aria-label="Main navigation">
-        <ul class="menu menu-horizontal px-1">
-          {
-            links.map((link) => (
-              <li class="mr-8">
-                <NavLink href={link.href} label={link.label} />
-              </li>
-            ))
-          }
-        </ul>
-      </nav>
-      <ThemeSwitch />
+      <hr class="border-base-300" />
     </div>
-    <hr class="border-base-300" />
-  </div>
-  <div
-    class="drawer-side"
-    id="drawer-side"
-    role="navigation"
-    aria-label="Mobile navigation"
-  >
-    <label for="my-drawer-2" class="drawer-overlay">
-      <span class="sr-only">Close menu</span>
-      <span
-        class="absolute right-4 top-4 z-10 rounded-lg bg-base-100 px-3 py-2 text-sm font-medium text-base-content shadow-lg ring-1 ring-base-300"
-        aria-hidden="true">Close menu</span
-      >
-    </label>
-    <ul
-      class="menu bg-base-200 min-h-full w-80 p-4 text-base-content"
-      role="list"
+    <div
+      class="drawer-side"
+      id="drawer-side"
+      role="navigation"
+      aria-label="Mobile navigation"
     >
-      {
-        links.map((link) => (
-          <li class="mr-8">
-            <NavLink href={link.href} label={link.label} menuItem />
-          </li>
-        ))
-      }
-    </ul>
+      <label for="my-drawer-2" class="drawer-overlay">
+        <span class="sr-only">Close menu</span>
+        <span
+          class="absolute right-4 top-4 z-10 rounded-lg bg-base-100 px-3 py-2 text-sm font-medium text-base-content shadow-lg ring-1 ring-base-300"
+          aria-hidden="true">Close menu</span
+        >
+      </label>
+      <ul
+        class="menu bg-base-200 min-h-full w-80 p-4 text-base-content"
+        role="list"
+      >
+        {
+          links.map((link) => (
+            <li class="mr-8">
+              <NavLink href={link.href} label={link.label} menuItem />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </div>
-</div>
+</header>
 
 <script>
   function getDrawerFocusables(container: HTMLElement): HTMLElement[] {
