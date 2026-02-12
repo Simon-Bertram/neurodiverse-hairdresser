@@ -1,6 +1,7 @@
 import { SENSORY_CATEGORIES, SENSORY_OPTIONS } from "./constants";
 import { SensoryCategory } from "./SensoryCategory";
 import { SensoryCheck } from "./SensoryCheck";
+import { StepHeader } from "./StepHeader";
 import type { StepSensoryProps } from "./types";
 
 export function StepSensory({

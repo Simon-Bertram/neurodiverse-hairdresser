@@ -1,4 +1,5 @@
 import { CONTACT_OPTIONS } from "./constants";
+import { StepHeader } from "./StepHeader";
 import type { StepAboutYouProps } from "./types";
 
 export function StepAboutYou({

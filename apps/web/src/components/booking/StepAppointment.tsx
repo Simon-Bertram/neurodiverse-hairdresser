@@ -1,4 +1,5 @@
 import { SERVICES } from "./constants";
+import { StepHeader } from "./StepHeader";
 import type { StepAppointmentProps } from "./types";
 
 export function StepAppointment({
