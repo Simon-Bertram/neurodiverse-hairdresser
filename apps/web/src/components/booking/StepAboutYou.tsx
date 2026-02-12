@@ -1,10 +1,5 @@
+import { CONTACT_OPTIONS } from "./constants";
 import type { StepAboutYouProps } from "./types";
-
-const CONTACT_OPTIONS: { value: "Email" | "Text" | "Phone"; icon: string }[] = [
-  { value: "Email", icon: "📧" },
-  { value: "Text", icon: "📱" },
-  { value: "Phone", icon: "📞" },
-];
 
 export function StepAboutYou({
   name,
@@ -22,12 +17,11 @@ export function StepAboutYou({
 
   return (
     <div className="space-y-8">
-      <header>
-        <h2 className="font-bold text-2xl text-base-content">Your details</h2>
-        <p className="mt-1 text-base-content/70 text-lg">
-          Tell us who you are and how we can reach you.
-        </p>
-      </header>
+      <StepHeader
+        description="Tell us who you are and how we can reach you."
+        descriptionClassName="text-base-content/70 text-lg"
+        title="Your details"
+      />
 
       <div className="mb-4 space-y-8">
         <div>

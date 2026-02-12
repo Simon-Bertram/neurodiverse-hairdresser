@@ -1,14 +1,13 @@
+import { StepHeader } from "./StepHeader";
 import type { StepLocationProps } from "./types";
 
 export function StepLocation({ address, onAddressChange }: StepLocationProps) {
   return (
     <div className="space-y-8">
-      <header>
-        <h2 className="font-bold text-2xl text-base-content">Address</h2>
-        <p className="mt-1 text-base-content/70">
-          We visit Bournemouth, Poole, and surrounding areas (within 25 miles).
-        </p>
-      </header>
+      <StepHeader
+        description="We visit Bournemouth, Poole, and surrounding areas (within 25 miles)."
+        title="Address"
+      />
 
       <div>
         <label

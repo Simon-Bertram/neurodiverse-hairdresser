@@ -124,7 +124,7 @@ export function useBookingWizardState(): UseBookingWizardStateResult {
   function handleFormSubmit(e: Event) {
     e.preventDefault();
     if (
-      currentStep.value === 5 &&
+      currentStep.value === MAX_STEP &&
       isStepValidSignal.value &&
       !isSubmitting.value
     ) {

@@ -11,15 +11,10 @@ export function StepSensory({
 }: StepSensoryProps) {
   return (
     <div className="space-y-8">
-      <header>
-        <h2 className="font-bold text-2xl text-base-content">
-          Sensory preferences (optional)
-        </h2>
-        <p className="mt-1 text-base-content/70">
-          Tick anything that helps you feel comfortable. We will follow your
-          choices.
-        </p>
-      </header>
+      <StepHeader
+        description="Tick anything that helps you feel comfortable. We will follow your choices."
+        title="Sensory preferences (optional)"
+      />
 
       <div className="space-y-6">
         {SENSORY_CATEGORIES.map((cat) => {

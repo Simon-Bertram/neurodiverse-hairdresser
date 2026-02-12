@@ -2,7 +2,19 @@
  * Booking wizard constants: steps, initial form data, services, sensory options.
  */
 
-import type { FormData, SensoryPrefs, StepConfig, StepId } from "./types";
+import type {
+  ContactMethod,
+  FormData,
+  SensoryPrefs,
+  StepConfig,
+  StepId,
+} from "./types";
+
+export const CONTACT_OPTIONS: { value: ContactMethod; icon: string }[] = [
+  { value: "Email", icon: "📧" },
+  { value: "Text", icon: "📱" },
+  { value: "Phone", icon: "📞" },
+];
 
 export const STEPS: StepConfig[] = [
   { id: 1, label: "About You", icon: "👤" },

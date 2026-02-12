@@ -11,12 +11,11 @@ export function StepAppointment({
 }: StepAppointmentProps) {
   return (
     <div className="space-y-8">
-      <header>
-        <h2 className="font-bold text-2xl text-base-content">Appointment</h2>
-        <p className="mt-1 text-base-content/70 text-lg xl:text-xl">
-          What can Lucy do for you today?
-        </p>
-      </header>
+      <StepHeader
+        description="What can Lucy do for you today?"
+        descriptionClassName="text-base-content/70 text-lg xl:text-xl"
+        title="Appointment"
+      />
 
       <div className="space-y-6">
         <div>

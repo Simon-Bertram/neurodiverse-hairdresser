@@ -1,3 +1,5 @@
+import { ReviewSection } from "./ReviewSection";
+import { StepHeader } from "./StepHeader";
 import type { SensoryPrefs, StepReviewProps } from "./types";
 
 const RE_CAPITAL = /([A-Z])/g;
@@ -24,81 +26,50 @@ export function StepReview({
 
   return (
     <div className="space-y-8">
-      <header>
-        <h2 className="font-bold text-2xl text-base-content">Ready to send?</h2>
-        <p className="mt-1 text-base-content/70">
-          Please check your details. Click back if you need to fix anything.
-        </p>
-      </header>
+      <StepHeader
+        description="Please check your details. Click back if you need to fix anything."
+        title="Ready to send?"
+      />
 
       <div className="space-y-6 rounded-3xl border border-base-300 bg-base-200 p-8">
-        <div className="flex items-start justify-between border-base-300 border-b pb-4">
-          <div>
-            <h3 className="mb-1 font-bold text-base-content/60 text-xs uppercase tracking-widest">
-              Details
-            </h3>
-            <p className="font-bold text-base-content text-lg">
-              {formData.name}
-            </p>
-            <p className="text-base-content/80">
-              {formData.contactMethod}: {formData.contactDetail}
-            </p>
-          </div>
-          <button
-            aria-label="Edit details"
-            className="btn btn-ghost btn-sm font-bold text-primary"
-            onClick={() => onEditStep(1)}
-            type="button"
-          >
-            Edit
-          </button>
-        </div>
+        <ReviewSection
+          editStepId={1}
+          onEditStep={onEditStep}
+          sectionLabel="Details"
+        >
+          <p className="font-bold text-base-content text-lg">{formData.name}</p>
+          <p className="text-base-content/80">
+            {formData.contactMethod}: {formData.contactDetail}
+          </p>
+        </ReviewSection>
 
-        <div className="flex items-start justify-between border-base-300 border-b pb-4">
-          <div>
-            <h3 className="mb-1 font-bold text-base-content/60 text-xs uppercase tracking-widest">
-              Address
-            </h3>
-            <p className="whitespace-pre-wrap text-base-content">
-              {formData.address}
-            </p>
-          </div>
-          <button
-            aria-label="Edit address"
-            className="btn btn-ghost btn-sm font-bold text-primary"
-            onClick={() => onEditStep(2)}
-            type="button"
-          >
-            Edit
-          </button>
-        </div>
+        <ReviewSection
+          editStepId={2}
+          onEditStep={onEditStep}
+          sectionLabel="Address"
+        >
+          <p className="whitespace-pre-wrap text-base-content">
+            {formData.address}
+          </p>
+        </ReviewSection>
 
-        <div className="flex items-start justify-between border-base-300 border-b pb-4">
-          <div>
-            <h3 className="mb-1 font-bold text-base-content/60 text-xs uppercase tracking-widest">
-              Appointment
-            </h3>
-            <p className="font-bold text-base-content text-lg">
-              {formData.service}
+        <ReviewSection
+          editStepId={3}
+          onEditStep={onEditStep}
+          sectionLabel="Appointment"
+        >
+          <p className="font-bold text-base-content text-lg">
+            {formData.service}
+          </p>
+          <p className="text-base-content/80">
+            {formData.preferredTime || "No time preference noted"}
+          </p>
+          {formData.notes && (
+            <p className="mt-1 text-base-content/80 text-sm">
+              {formData.notes}
             </p>
-            <p className="text-base-content/80">
-              {formData.preferredTime || "No time preference noted"}
-            </p>
-            {formData.notes && (
-              <p className="mt-1 text-base-content/80 text-sm">
-                {formData.notes}
-              </p>
-            )}
-          </div>
-          <button
-            aria-label="Edit appointment"
-            className="btn btn-ghost btn-sm font-bold text-primary"
-            onClick={() => onEditStep(3)}
-            type="button"
-          >
-            Edit
-          </button>
-        </div>
+          )}
+        </ReviewSection>
 
         <div>
           <h3 className="mb-2 font-bold text-base-content/60 text-xs uppercase tracking-widest">
