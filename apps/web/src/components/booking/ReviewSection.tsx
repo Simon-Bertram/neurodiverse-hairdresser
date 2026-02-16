@@ -8,6 +8,10 @@ interface ReviewSectionProps {
   children: ComponentChildren;
 }
 
+function sectionLabelToId(label: string): string {
+  return `review-${label.toLowerCase().replace(/\s+/g, "-")}`;
+}
+
 /**
  * Reusable review section with section label, content, and Edit button.
  */
@@ -17,10 +21,17 @@ export function ReviewSection({
   onEditStep,
   children,
 }: ReviewSectionProps) {
+  const headingId = sectionLabelToId(sectionLabel);
   return (
-    <div className="flex items-start justify-between border-base-300 border-b pb-4">
+    <section
+      aria-labelledby={headingId}
+      className="flex items-start justify-between border-base-300 border-b pb-4"
+    >
       <div>
-        <h3 className="mb-1 font-bold text-base-content/60 text-xs uppercase tracking-widest">
+        <h3
+          className="mb-1 font-bold text-base-content/60 text-xs uppercase tracking-widest"
+          id={headingId}
+        >
           {sectionLabel}
         </h3>
         {children}
@@ -33,6 +44,6 @@ export function ReviewSection({
       >
         Edit
       </button>
-    </div>
+    </section>
   );
 }

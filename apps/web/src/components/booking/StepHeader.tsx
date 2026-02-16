@@ -14,7 +14,7 @@ export function StepHeader({
 }: StepHeaderProps) {
   return (
     <header>
-      <h2 className="font-bold text-2xl text-base-content">{title}</h2>
+      <h3 className="font-bold text-2xl text-base-content">{title}</h3>
       <p className={`mt-1 ${descriptionClassName}`}>{description}</p>
     </header>
   );

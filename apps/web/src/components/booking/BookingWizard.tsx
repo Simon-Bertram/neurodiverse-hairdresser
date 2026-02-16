@@ -28,8 +28,8 @@ export default function BookingWizard() {
 
   return (
     <div className="min-h-screen bg-base-100 px-4 py-12 font-sans text-base-content">
-      <div className="mx-auto max-w-4xl overflow-hidden rounded-3xl border border-base-300 bg-base-200 shadow-xl">
-        <div className="bg-primary p-8 text-primary-content">
+      <article className="mx-auto max-w-4xl overflow-hidden rounded-3xl border border-base-300 bg-base-200 shadow-xl">
+        <header className="bg-primary p-8 text-primary-content">
           <h2 className="mb-6 font-bold text-2xl">
             Book an appointment with Lucy
           </h2>
@@ -38,7 +38,7 @@ export default function BookingWizard() {
             onStepClick={goToStep}
             steps={STEPS}
           />
-        </div>
+        </header>
 
         <BookingInfoBanner />
 
@@ -117,7 +117,7 @@ export default function BookingWizard() {
             onPrev={prevStep}
           />
         </form>
-      </div>
+      </article>
 
       <footer className="mx-auto mt-12 max-w-2xl px-4 text-center text-base-content/60 text-sm leading-relaxed">
         <p>

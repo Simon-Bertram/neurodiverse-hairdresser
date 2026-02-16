@@ -27,12 +27,12 @@ const areas = [
       </p>
       <a href="/services" class="link link-hover xl:text-xl">Our Services</a>
     </nav>
-    <div>
-      <h2 class="footer-title xl:text-xl">Areas we cover</h2>
+    <section aria-labelledby="areas-heading">
+      <h2 id="areas-heading" class="footer-title xl:text-xl">Areas we cover</h2>
       <ul class="xl:text-xl">
         {areas.map((area) => <li>{area}</li>)}
       </ul>
-    </div>
+    </section>
   </div>
   <div class="w-full text-center border-t border-neutral-content/20 pt-6">
     <p>© {new Date().getFullYear()} Lucy Russell Hair</p>

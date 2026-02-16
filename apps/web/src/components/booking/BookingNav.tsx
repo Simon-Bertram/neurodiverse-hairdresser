@@ -10,10 +10,15 @@ export function BookingNav({
   onPrev,
   onNext,
 }: BookingNavProps) {
-  if (currentStep === MAX_STEP) return null;
+  if (currentStep === MAX_STEP) {
+    return null;
+  }
 
   return (
-    <div className="mt-12 flex gap-6 border-base-300 border-t pt-8">
+    <nav
+      aria-label="Form steps"
+      className="mt-12 flex gap-6 border-base-300 border-t pt-8"
+    >
       {currentStep > 1 && (
         <button
           className="btn btn-ghost btn-lg flex-1 rounded-2xl border-2 border-base-300 px-6 py-5 font-bold text-base-content/70 outline-none transition-all hover:bg-base-200 hover:text-base-content focus:ring-4 focus:ring-base-300"
@@ -36,6 +41,6 @@ export function BookingNav({
         {currentStep === MAX_STEP - 1 ? "Review Request" : "Continue"}
         {isStepValid && <span className="text-xl">→</span>}
       </button>
-    </div>
+    </nav>
   );
 }
