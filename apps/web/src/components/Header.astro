@@ -22,22 +22,21 @@ const links = [
           <label
             for="my-drawer-2"
             id="drawer-open-btn"
-            class="btn btn-square btn-ghost"
+            class="btn btn-square btn-ghost text-primary-content hover:text-white transition-colors"
+            aria-label="Open menu"
           >
-            <span class="sr-only">Open menu</span>
-            <span class="text-sm">Menu</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              class="inline-block h-6 w-6 stroke-current"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="inline-block h-6 w-6 shrink-0 stroke-current"
               aria-hidden="true"
+              focusable="false"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"></path>
+              <path d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </label>
         </div>
@@ -66,19 +65,19 @@ const links = [
       <hr class="border-base-300" />
     </div>
     <nav
-      class="drawer-side"
+      class="drawer-side bg-primary"
       id="drawer-side"
       aria-label="Mobile navigation"
     >
       <label for="my-drawer-2" class="drawer-overlay">
         <span class="sr-only">Close menu</span>
         <span
-          class="absolute right-4 top-4 z-10 rounded-lg bg-base-100 px-3 py-2 text-sm font-medium text-base-content shadow-lg ring-1 ring-base-300"
+          class="absolute right-4 top-4 z-10 rounded-lg bg-primary-content/10 px-3 py-2 text-sm font-medium text-primary-content shadow-lg ring-1 ring-primary-content/20"
           aria-hidden="true">Close menu</span
         >
       </label>
       <ul
-        class="menu bg-base-200 min-h-full w-80 p-4 text-base-content"
+        class="menu min-h-full w-80 bg-primary p-4 text-primary-content"
         role="list"
       >
         {
