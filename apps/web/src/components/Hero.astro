@@ -5,37 +5,59 @@ import AreasVisited from "./AreasVisited.astro";
 ---
 
 <section
-  class="hero bg-base-200 min-h-screen"
+  class="hero min-h-screen relative bg-base-200"
   aria-labelledby="hero-heading"
 >
-  <div class="hero-content flex-col lg:flex-row gap-8 xl:gap-20">
-    <Image
-      src={heroImage}
-      alt="Calm mobile hairdressing scene"
-      width={heroImage.width}
-      height={heroImage.height}
-      class="max-w-sm rounded-lg shadow-2xl"
-    />
-    <div>
+  <div
+    class="hero-content relative flex flex-col lg:flex-row gap-8 xl:gap-20 w-full h-full p-0 lg:p-8"
+  >
+    <div class="relative w-full h-screen lg:h-auto lg:w-auto shrink-0">
+      <Image
+        src={heroImage}
+        alt="Calm mobile hairdressing scene"
+        width={heroImage.width}
+        height={heroImage.height}
+        class="absolute inset-0 h-full w-full object-cover lg:static lg:h-auto lg:w-auto lg:max-w-sm lg:rounded-lg lg:shadow-2xl"
+      />
+      <div
+        class="pointer-events-none absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-transparent lg:bg-none"
+        aria-hidden="true"
+      >
+      </div>
+      <div
+        class="absolute inset-x-0 top-0 flex flex-col justify-start items-center px-6 pt-16 pb-12 text-primary-content lg:hidden text-center z-10"
+      >
+        <h1
+          class="text-white text-3xl md:text-4xl font-bold leading-relaxed max-w-xl"
+        >
+          Sensory-friendly mobile hairdressing in Bournemouth &amp; Poole
+        </h1>
+      </div>
+    </div>
+    <div
+      class="px-6 py-8 lg:py-0 bg-base-200 lg:bg-transparent flex flex-col justify-center"
+    >
       <h1
         id="hero-heading"
-        class="text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-bold leading-relaxed"
+        class="hidden lg:block text-3xl lg:text-4xl xl:text-6xl font-bold leading-relaxed max-w-xl text-base-content mb-4"
       >
         Sensory-friendly mobile hairdressing in Bournemouth &amp; Poole
       </h1>
-      <p class="py-6 prose lg:prose-lg xl:prose-2xl leading-relaxed">
+      <p
+        class="prose prose-base lg:prose-lg xl:prose-2xl leading-relaxed max-w-xl"
+      >
         Calm, sensory-friendly mobile hairdressing at home in Bournemouth, Poole
         and surrounding areas (within 25 miles), specialising in neurodivergent
         clients, carers and anyone who prefers quiet, predictable appointments.
       </p>
-      <div class="flex flex-wrap gap-4">
-        <a class="btn btn-primary xl:btn-xl" href="/book"
+      <div class="mt-6 flex flex-wrap gap-4">
+        <a class="btn btn-primary w-full sm:w-auto xl:btn-xl" href="/book"
           >Book a quiet appointment</a
         >
 
         <a
           href="/before-your-visit"
-          class="btn btn-outline btn-secondary xl:btn-xl"
+          class="btn btn-outline btn-secondary w-full sm:w-auto xl:btn-xl"
         >
           Before your visit
         </a>
