@@ -20,16 +20,18 @@ const isActive =
   class:list={[
     // Use primary-content for text to ensure contrast against the sage header background
     !menuItem &&
-      "px-1 py-0.5 transition-colors border-b-2 border-transparent text-primary-content hover:text-white hover:border-white xl:text-xl",
+      "px-1 py-0.5 transition-colors border-b-2 border-transparent text-primary-content hover:text-primary-content/70 hover:border-white xl:text-xl",
 
     // Active state uses solid primary-content border
-    !menuItem && isActive && "text-white! border-white! border-b-2",
+    !menuItem &&
+      isActive &&
+      "text-primary-content/60! border-primary-content/80! border-b-2",
 
     // MenuItem variants (usually for mobile drawers or dropdowns)
     menuItem &&
       "rounded-lg transition-colors text-primary-content hover:bg-white/10 hover:text-white",
 
-    menuItem && isActive && "bg-white/20 text-white font-bold",
+    menuItem && isActive && "bg-white/20 text-primary-content font-bold",
   ]}
   aria-current={isActive ? "page" : undefined}
 >
