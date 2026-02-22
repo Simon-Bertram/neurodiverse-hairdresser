@@ -1,3 +1,4 @@
+import { actions } from "astro:actions";
 import { computed, signal } from "@preact/signals";
 import { useMemo } from "preact/hooks";
 import { INITIAL_FORM_DATA, MAX_STEP } from "./constants";
@@ -98,20 +99,17 @@ export function useBookingWizardState(): UseBookingWizardStateResult {
     submitError.value = null;
     isSubmitting.value = true;
     try {
-      const res = await fetch("/api/book", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData.value),
-      });
-      if (res.redirected) {
-        window.location.href = res.url;
+      const { data, error } = await actions.send(formData.value);
+      if (error) {
+        submitError.value =
+          typeof error === "object" && error !== null && "message" in error
+            ? String((error as { message?: string }).message)
+            : "Something went wrong. Please try again or contact us directly.";
         return;
       }
-      if (!res.ok) {
-        const text = await res.text();
-        throw new Error(text || `Request failed: ${res.status}`);
+      if (data) {
+        window.location.href = "/book/thank-you";
       }
-      window.location.href = "/book/thank-you";
     } catch (err) {
       console.error("Booking submit failed:", err);
       submitError.value =
