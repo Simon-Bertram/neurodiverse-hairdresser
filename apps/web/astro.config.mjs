@@ -1,4 +1,4 @@
-import node from "@astrojs/node";
+import cloudflare from "@astrojs/cloudflare";
 import preact from "@astrojs/preact";
 // @ts-check
 import tailwindcss from "@tailwindcss/vite";
@@ -24,7 +24,7 @@ function globalCssFullReload() {
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  adapter: node({ mode: "standalone" }),
+  adapter: cloudflare(),
   integrations: [preact()],
   env: {
     schema: {
