@@ -1,4 +1,4 @@
-# my-better-t-app
+# lucy-hair
 
 This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines Astro, and more.
 
@@ -29,7 +29,7 @@ Open [http://localhost:4321](http://localhost:4321) in your browser to see the w
 ## Project Structure
 
 ```
-my-better-t-app/
+lucy-hair/
 ├── apps/
 │   ├── web/         # Frontend application (Astro)
 ```

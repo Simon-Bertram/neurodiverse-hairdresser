@@ -7,12 +7,13 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "worker": "wrangler dev"
   },
   "dependencies": {
     "@astrojs/node": "10.0.0-beta.2",
     "@astrojs/preact": "5.0.0-beta.3",
-    "@my-better-t-app/env": "workspace:*",
+    "@lucy-hair/env": "workspace:*",
     "@preact/signals": "^2.7.0",
     "astro": "6.0.0-beta.9",
     "dotenv": "catalog:",
@@ -22,7 +23,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@my-better-t-app/config": "workspace:*",
+    "@lucy-hair/config": "workspace:*",
     "@tailwindcss/vite": "^4.1.18",
     "tailwindcss": "^4.1.18",
     "typescript": "catalog:",
