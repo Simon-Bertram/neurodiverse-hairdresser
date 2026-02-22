@@ -23,6 +23,7 @@
     "fix": "ultracite fix"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.12",
     "@my-better-t-app/env": "workspace:*",
     "dotenv": "catalog:",
     "theme-change": "^2.5.0",
