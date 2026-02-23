@@ -1,5 +1,5 @@
 {
-  "extends": "@lucy-hair/config/tsconfig.base.json",
+  "extends": "./packages/config/tsconfig.base.json",
   "compilerOptions": {
     "strictNullChecks": true
   }
