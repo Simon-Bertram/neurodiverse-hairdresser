@@ -34,7 +34,7 @@
     "@lucy-hair/config": "workspace:*",
     "@tailwindcss/typography": "^0.5.19",
     "daisyui": "^5.5.17",
-    "turbo": "^2.8.9",
+    "turbo": "^2.8.10",
     "typescript": "catalog:",
     "ultracite": "7.1.4"
   },
