@@ -157,13 +157,15 @@ Run **`wrangler types`** after changing `wrangler.jsonc` or `.dev.vars` so gener
   }
   ```
 
-- **Secrets:** Set via CLI (not in config):
+- **Secrets:** Never put API keys, tokens, or database credentials in `wrangler.jsonc` or in source code. For production, set secrets via the CLI:
 
   ```bash
   npx wrangler secret put MY_SECRET
   ```
 
-- **Local dev:** Add **`.dev.vars`** in the Astro project root (e.g. `MY_SECRET=localvalue`) and **do not commit it**.
+  (You will be prompted to enter the value, or you can pipe it: `echo "$MY_SECRET" | npx wrangler secret put MY_SECRET`.)
+
+- **Local dev:** Add **`.dev.vars`** in the Astro project root (e.g. `MY_SECRET=localvalue`). Add `.dev.vars` to `.gitignore` and do not commit it.
 
 Access in Astro via the Cloudflare runtime: `Astro.locals.runtime.env` in pages and `context.locals.runtime.env` in API routes. This is compatible with Astro’s env API; you can keep using `envField` and still read Cloudflare bindings from `Astro.locals.runtime`.
 
