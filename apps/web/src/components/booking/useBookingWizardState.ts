@@ -42,8 +42,13 @@ export function useBookingWizardState(): UseBookingWizardStateResult {
     validateStep(currentStep.value, formData.value)
   );
 
-  function scrollToTop(): void {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  function scrollFormIntoView(): void {
+    const form = document.getElementById("booking-form");
+    if (form) {
+      form.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   }
 
   function setFormField<K extends keyof Omit<FormData, "sensory">>(
@@ -74,21 +79,21 @@ export function useBookingWizardState(): UseBookingWizardStateResult {
         step1Error.value = null;
       }
       currentStep.value = (currentStep.value + 1) as StepId;
-      scrollToTop();
+      scrollFormIntoView();
     }
   }
 
   function prevStep() {
     if (currentStep.value > 1) {
       currentStep.value = (currentStep.value - 1) as StepId;
-      scrollToTop();
+      scrollFormIntoView();
     }
   }
 
   function goToStep(stepId: StepId) {
     if (stepId < currentStep.value) {
       currentStep.value = stepId;
-      scrollToTop();
+      scrollFormIntoView();
     }
   }
 

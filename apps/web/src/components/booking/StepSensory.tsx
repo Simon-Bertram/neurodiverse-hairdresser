@@ -14,6 +14,7 @@ export function StepSensory({
     <div className="space-y-8">
       <StepHeader
         description="Tick anything that helps you feel comfortable. We will follow your choices."
+        stepNumber={4}
         title="Sensory preferences (optional)"
       />
 

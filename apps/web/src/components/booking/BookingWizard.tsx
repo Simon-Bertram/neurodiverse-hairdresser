@@ -28,7 +28,10 @@ export default function BookingWizard() {
 
   return (
     <div className="min-h-screen bg-base-100 px-4 py-12 font-sans text-base-content">
-      <article className="mx-auto max-w-4xl overflow-hidden rounded-3xl border border-base-300 bg-base-200 shadow-xl">
+      <article
+        className="mx-auto max-w-4xl overflow-hidden rounded-3xl border border-base-300 bg-base-200 shadow-xl"
+        id="booking-form"
+      >
         <header className="bg-primary p-8 text-primary-content">
           <h2 className="mb-6 font-bold text-2xl">
             Book an appointment with Lucy

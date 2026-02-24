@@ -14,6 +14,7 @@ export function BookingProgress({
       className="relative flex items-center justify-between p-4"
     >
       {steps.map((step) => {
+        // Derived flags for styling and interaction behaviour
         const isCurrent = currentStep === step.id;
         const isPast = currentStep > step.id;
         const canJumpBack = isPast;
@@ -31,6 +32,7 @@ export function BookingProgress({
             <button
               aria-current={isCurrent ? "step" : undefined}
               aria-label={`${step.label}${isPast ? ", completed" : ""}`}
+              // Only completed steps are clickable to jump back
               className={`flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 ${stepStyle} ${canJumpBack ? "cursor-pointer" : ""}`}
               disabled={!(canJumpBack || isCurrent)}
               onClick={() => canJumpBack && onStepClick(step.id)}
@@ -43,6 +45,7 @@ export function BookingProgress({
               )}
             </button>
             <span
+              // Step label that dims for non-current steps
               className={`mt-3 font-bold uppercase tracking-widest ${
                 isCurrent ? "opacity-100" : "opacity-60"
               }`}

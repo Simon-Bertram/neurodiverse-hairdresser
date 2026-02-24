@@ -6,6 +6,7 @@ export function StepLocation({ address, onAddressChange }: StepLocationProps) {
     <div className="space-y-8">
       <StepHeader
         description="We visit Bournemouth, Poole, and surrounding areas (within 25 miles)."
+        stepNumber={2}
         title="Address"
       />
 

@@ -21,6 +21,7 @@ export function StepAboutYou({
       <StepHeader
         description="Tell us who you are and how we can reach you."
         descriptionClassName="text-base-content/70 text-lg"
+        stepNumber={1}
         title="Your details"
       />
 

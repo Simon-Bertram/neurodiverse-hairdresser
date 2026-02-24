@@ -28,6 +28,7 @@ export function StepReview({
     <div className="space-y-8">
       <StepHeader
         description="Please check your details. Click back if you need to fix anything."
+        stepNumber={5}
         title="Ready to send?"
       />
 
