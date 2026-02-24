@@ -21,6 +21,7 @@
     "@types/node": "^25.3.0",
     "astro": "6.0.0-beta.9",
     "dotenv": "catalog:",
+    "jose": "^6.1.3",
     "preact": "^10.28.3",
     "resend": "^6.9.2",
     "theme-change": "^2.5.0",

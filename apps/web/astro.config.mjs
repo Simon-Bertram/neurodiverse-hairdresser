@@ -25,6 +25,9 @@ function globalCssFullReload() {
 export default defineConfig({
   output: "server",
   adapter: cloudflare({
+    platformProxy: {
+      enabled: true,
+    },
     imageService: "cloudflare",
   }),
   integrations: [preact()],
@@ -34,6 +37,14 @@ export default defineConfig({
         access: "public",
         context: "client",
         default: "http://localhost:3000",
+      }),
+      POLICY_AUD: envField.string({
+        access: "secret",
+        context: "server",
+      }),
+      TEAM_DOMAIN: envField.string({
+        access: "secret",
+        context: "server",
       }),
     },
   },

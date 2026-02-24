@@ -33,7 +33,7 @@ export default function BookingWizard() {
         id="booking-form"
       >
         <header className="bg-primary p-4 text-primary-content">
-          <h2 className="mb-6 p-2 text-center font-bold text-xl xl:text-2xl">
+          <h2 className="mb-6 p-2 text-center font-bold text-xl md:p-4 md:text-2xl">
             Book an appointment with Lucy
           </h2>
           <BookingProgress
