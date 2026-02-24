@@ -11,7 +11,7 @@ export function BookingProgress({
   return (
     <nav
       aria-label="Progress"
-      className="relative flex items-center justify-between p-4"
+      className="relative flex items-center justify-between px-4"
     >
       {steps.map((step) => {
         // Derived flags for styling and interaction behaviour
@@ -46,7 +46,7 @@ export function BookingProgress({
             </button>
             <span
               // Step label that dims for non-current steps
-              className={`mt-3 font-bold uppercase tracking-widest ${
+              className={`mt-3 font-bold text-xs uppercase tracking-widest sm:text-sm md:text-base ${
                 isCurrent ? "opacity-100" : "opacity-60"
               }`}
             >
@@ -55,7 +55,10 @@ export function BookingProgress({
           </div>
         );
       })}
-      <div className="absolute top-6 left-0 -z-0 h-1 w-full rounded-full bg-primary/50" />
+      <div
+        aria-hidden="true"
+        className="absolute top-6 left-0 -z-0 h-1 w-full rounded-full bg-primary/50"
+      />
     </nav>
   );
 }

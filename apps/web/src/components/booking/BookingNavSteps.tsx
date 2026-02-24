@@ -4,7 +4,7 @@ import type { BookingNavProps } from "./types";
 /**
  * Back / Continue navigation. Hidden on review step (has its own submit).
  */
-export function BookingNav({
+export function BookingNavSteps({
   currentStep,
   isStepValid,
   onPrev,
