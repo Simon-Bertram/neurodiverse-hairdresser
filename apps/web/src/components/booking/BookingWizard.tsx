@@ -27,13 +27,13 @@ export default function BookingWizard() {
   } = useBookingWizardState();
 
   return (
-    <div className="min-h-screen bg-base-100 px-4 py-12 font-sans text-base-content">
+    <div className="min-h-screen bg-base-100 py-12 font-sans text-base-content">
       <article
         className="mx-auto max-w-4xl overflow-hidden rounded-3xl border border-base-300 bg-base-200 shadow-xl"
         id="booking-form"
       >
         <header className="bg-primary p-4 text-primary-content">
-          <h2 className="mb-6 font-bold text-2xl">
+          <h2 className="mb-6 p-2 text-center font-bold text-xl xl:text-2xl">
             Book an appointment with Lucy
           </h2>
           <BookingProgress
