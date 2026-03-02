@@ -15,7 +15,6 @@ export function StepAppointment({
       <StepHeader
         description="What can Lucy do for you today?"
         descriptionClassName="text-base-content/70 text-lg xl:text-xl"
-        stepNumber={3}
         title="Appointment"
       />
 

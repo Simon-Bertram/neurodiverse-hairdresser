@@ -2,6 +2,7 @@ interface StepHeaderProps {
   title: string;
   description: string;
   descriptionClassName?: string;
+  stepNumber?: number;
 }
 
 /**

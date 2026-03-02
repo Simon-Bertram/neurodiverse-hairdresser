@@ -1,3 +1,4 @@
+import { useEffect } from "preact/hooks";
 import { ReviewSection } from "./ReviewSection";
 import { StepHeader } from "./StepHeader";
 import type { SensoryPrefs, StepReviewProps } from "./types";
@@ -18,6 +19,15 @@ export function StepReview({
   onEditStep,
   isSubmitting,
 }: StepReviewProps) {
+  useEffect(() => {
+    const form = document.getElementById("booking-form");
+    if (form) {
+      form.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, []);
+
   const selectedSensory = (
     Object.entries(formData.sensory) as [keyof SensoryPrefs, boolean][]
   )
