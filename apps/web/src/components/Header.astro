@@ -18,7 +18,8 @@ const links = [
     <div class="drawer-content flex flex-col">
       <!-- Navbar -->
       <div class="navbar bg-primary w-full">
-        <div class="flex-none lg:hidden">
+        <div class="mx-auto flex w-full items-center px-2 2xl:max-w-6xl">
+          <div class="flex-none lg:hidden">
           <label
             for="my-drawer-2"
             id="drawer-open-btn"
@@ -39,8 +40,8 @@ const links = [
               <path d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </label>
-        </div>
-        <div class="mx-2 flex-1 px-2">
+          </div>
+          <div class="mx-2 flex-1 px-2">
           <a
             href="/"
             class="text-primary-content hover:text-primary-content/90"
@@ -48,8 +49,8 @@ const links = [
           >
             <Logo />
           </a>
-        </div>
-        <nav class="hidden flex-none lg:block" aria-label="Main navigation">
+          </div>
+          <nav class="hidden flex-none lg:block" aria-label="Main navigation">
           <ul class="menu menu-horizontal px-1">
             {
               links.map((link) => (
@@ -59,8 +60,9 @@ const links = [
               ))
             }
           </ul>
-        </nav>
-        <ThemeSwitch />
+          </nav>
+          <ThemeSwitch />
+        </div>
       </div>
       <hr class="border-base-300" />
     </div>
