@@ -28,7 +28,10 @@ export default defineConfig({
     platformProxy: {
       enabled: true,
     },
-    imageService: "cloudflare",
+    imageService: {
+      build: "compile", // Astro (Sharp) optimizes at build time
+      runtime: "passthrough", // Worker just serves the built images
+    },
   }),
   integrations: [preact()],
   env: {

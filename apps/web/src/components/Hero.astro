@@ -15,8 +15,9 @@ import AreasVisited from "./AreasVisited.astro";
       <Image
         src={heroImage}
         alt="Calm mobile hairdressing scene"
-        width={heroImage.width}
         height={heroImage.height}
+        width={heroImage.width / 2}
+        densities={[1, 1.5, 2]}
         class="absolute inset-0 h-full w-full object-cover lg:static lg:h-auto lg:w-auto lg:max-w-sm lg:rounded-lg lg:shadow-2xl"
       />
       <div
